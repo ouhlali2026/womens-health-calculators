@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="حاسبة موعد الولادة لحمل أطفال الأنابيب (IVF). أدخلي تاريخ نقل الأجنة وعمر الأجنة بالأيام لتحصلي على تاريخ الولادة المتوقع وأسابيع الحمل.">
+    <meta name="keywords" content="IVF, أطفال الأنابيب, موعد الولادة, نقل الأجنة, حاسبة حمل">
+    <title>حاسبة أطفال الأنابيب (IVF) | صحة المرأة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Tajawal', sans-serif; background: #FFF9F9; color: #2D3E50; line-height: 1.6; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #E91E63, #C2185B); color: white; padding: 1rem 0; text-align: center; }
+        .logo { font-size: 1.6rem; font-weight: 700; }
+        nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 0.5rem 0; position: sticky; top: 0; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 1.2rem; }
+        .nav-links a { text-decoration: none; color: #2D3E50; font-weight: 500; }
+        .nav-links a:hover { color: #E91E63; }
+        .card { background: white; border-radius: 24px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .input-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.3rem; font-weight: 500; }
+        input, select { width: 100%; padding: 0.7rem; border: 1px solid #ddd; border-radius: 12px; font-family: inherit; }
+        button { background: #E91E63; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 50px; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; }
+        .result { background: #FFF3F0; padding: 1rem; border-radius: 16px; margin-top: 1rem; font-weight: bold; }
+        .source { font-size: 0.7rem; color: #888; direction: ltr; text-align: left; margin-top: 1rem; border-top: 1px solid #eee; padding-top: 0.5rem; }
+        .ad-container { background: #f5f5f5; border: 1px dashed #ccc; text-align: center; padding: 1rem; margin: 1.5rem 0; border-radius: 16px; }
+        .ad-inner { min-height: 200px; background: #e9e9e9; display: flex; align-items: center; justify-content: center; }
+        .disclaimer { background: #FFF3F0; border-right: 4px solid #FF9800; padding: 1rem; margin: 1.5rem 0; font-size: 0.85rem; border-radius: 12px; }
+        footer { background: #2D3E50; color: #ccc; text-align: center; padding: 1rem; margin-top: 2rem; font-size: 0.8rem; }
+        footer a { color: #E91E63; }
+        @media (max-width: 600px) { .container { padding: 15px; } }
+    </style>
+</head>
+<body>
+    <header><div class="container"><div class="logo">🌸 صحة المرأة</div></div></header>
+    <nav><div class="container"><ul class="nav-links">
+        <li><a href="/">الرئيسية</a></li>
+        <li><a href="/pregnancy/">الحمل</a></li>
+        <li><a href="/period/">الدورة</a></li>
+        <li><a href="/health/">الصحة</a></li>
+    </ul></div></nav>
+
+    <main class="container">
+        <h1 style="color:#E91E63; margin:1rem 0 0.5rem;">🧪 حاسبة أطفال الأنابيب (IVF)</h1>
+        <p>هذه الحاسبة مخصصة للحمل الناتج عن الإخصاب المخبري (IVF). أدخلي تاريخ نقل الأجنة وعمر الأجنة في يوم النقل، وسنحسب موعد الولادة المتوقع وعمر الحمل الحالي.</p>
+
+        <div class="ad-container"><div class="ad-inner">[إعلان Adstera/Monetag 728×90]</div></div>
+
+        <div class="card">
+            <div class="input-group">
+                <label>📆 تاريخ نقل الأجنة (ET):</label>
+                <input type="date" id="etDate">
+            </div>
+            <div class="input-group">
+                <label>🧬 عمر الأجنة في يوم النقل (بالأيام):</label>
+                <select id="embryoAge">
+                    <option value="3">3 أيام (يوم 3)</option>
+                    <option value="5" selected>5 أيام (يوم 5 - Blastocyst)</option>
+                    <option value="6">6 أيام (يوم 6)</option>
+                </select>
+            </div>
+            <button onclick="calculateIVF()">احسبي موعد الولادة</button>
+            <div class="result" id="result"></div>
+        </div>
+
+        <div class="source">المصدر: American Society for Reproductive Medicine (ASRM) - IVF Due Date Calculation Guidelines, 2024</div>
+
+        <div class="ad-container"><div class="ad-inner">[إعلان Adstera/Monetag 300×250]</div></div>
+
+        <div class="disclaimer">
+            <strong>⚠️ تنبيه طبي:</strong> حساب موعد الولادة في IVF يكون أكثر دقة من الحمل الطبيعي لأن تاريخ الحمل معروف بدقة. لكنه لا يزال تقديرًا، والمتابعة مع الطبيب والسونار ضرورية.
+        </div>
+    </main>
+
+    <footer><div class="container">© 2025 صحة المرأة | <a href="/pages/privacy.html">الخصوصية</a> | <a href="/pages/disclaimer.html">إخلاء مسؤولية</a></div></footer>
+
+    <script>
+        function calculateIVF() {
+            let et = document.getElementById('etDate').value;
+            let embryoAge = parseInt(document.getElementById('embryoAge').value);
+            if (!et) {
+                document.getElementById('result').innerHTML = 'الرجاء اختيار تاريخ نقل الأجنة.';
+                return;
+            }
+            let transferDate = new Date(et);
+            if (isNaN(transferDate.getTime())) {
+                document.getElementById('result').innerHTML = 'تاريخ غير صالح.';
+                return;
+            }
+            // حساب تاريخ الحمل: تاريخ النقل ناقص عمر الأجنة
+            let conceptionDate = new Date(transferDate);
+            conceptionDate.setDate(conceptionDate.getDate() - embryoAge);
+            // تاريخ الولادة = تاريخ الحمل + 266 يوم (38 أسبوع)
+            let dueDate = new Date(conceptionDate);
+            dueDate.setDate(dueDate.getDate() + 266);
+            let options = { year: 'numeric', month: 'long', day: 'numeric' };
+            let dueFormatted = dueDate.toLocaleDateString('ar-EG', options);
+            
+            // حساب عمر الحمل الحالي
+            let today = new Date();
+            let weeks = Math.floor((today - conceptionDate) / (1000 * 60 * 60 * 24 * 7));
+            let days = Math.floor(((today - conceptionDate) / (1000 * 60 * 60 * 24)) % 7);
+            if (today < conceptionDate) {
+                document.getElementById('result').innerHTML = `📌 موعد الولادة المتوقع: ${dueFormatted}<br>⚠️ تاريخ النقل يقع في المستقبل. الرجاء التأكد.`;
+            } else {
+                document.getElementById('result').innerHTML = `📌 موعد الولادة المتوقع: <strong>${dueFormatted}</strong><br>📊 عمر الحمل الحالي: ${weeks} أسبوع و ${days} يومًا (تقريبًا).`;
+            }
+        }
+    </script>
+</body>
+</html>
