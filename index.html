@@ -24,7 +24,21 @@
         .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--primary); }
-        .top-ad { margin: 1rem 0; text-align: center; } /* ← إعلان أعلى الصفحة */
+        /* إعلان متجاوب */
+        .top-ad {
+            margin: 1rem 0;
+            text-align: center;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+        }
+        .top-ad iframe,
+        .top-ad ins {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
         .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; margin: 1.5rem 0; }
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
@@ -37,6 +51,11 @@
         .sidebar ul { list-style: none; margin-bottom: 1rem; }
         .sidebar ul li a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; display: block; padding: 0.2rem 0; }
         .sidebar-ad { margin: 1rem 0; text-align: center; }
+        .sidebar-ad iframe,
+        .sidebar-ad ins {
+            max-width: 100%;
+            height: auto;
+        }
         footer { background: #0F1A24; color: #ccc; margin-top: 1.5rem; padding: 0.8rem 0; font-size: 0.7rem; text-align: center; }
         .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.3rem; }
         .footer-links a { color: #ccc; text-decoration: none; }
@@ -57,7 +76,7 @@
     </ul></div></nav>
 
     <div class="container">
-        <!-- ✅ إعلان مستطيل قصير في أعلى الصفحة (أسفل الشريط وفوق البطاقات) -->
+        <!-- ✅ إعلان علوي متجاوب (يتمدد على الهواتف) -->
         <div class="top-ad">
             <script>
                 atOptions = {
@@ -86,7 +105,7 @@
             <div class="sidebar">
                 <h3>📌 روابط سريعة</h3>
                 <ul><li><a href="/pregnancy/">حاسبة الحمل</a></li><li><a href="/period/">حاسبة الدورة</a></li><li><a href="/period/ovulation.html">حاسبة التبويض</a></li><li><a href="/health/bmi.html">BMI</a></li></ul>
-                <!-- إعلان مربع 300x250 في الشريط الجانبي (سطح المكتب فقط) -->
+                <!-- إعلان مربع متجاوب في الشريط الجانبي -->
                 <div class="sidebar-ad">
                     <script>atOptions={'key':'9249bc7082ec8de07f68c70c571d2018','format':'iframe','height':250,'width':300,'params':{}};</script>
                     <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
