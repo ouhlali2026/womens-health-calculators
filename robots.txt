@@ -1,0 +1,22 @@
+# إرشادات الزحف لموقع صحة المرأة
+# تاريخ الإنشاء: أبريل 2025
+
+# السماح لجميع محركات البحث بالزحف إلى جميع الصفحات
+User-agent: *
+Allow: /
+
+# منع الزحف إلى المجلدات التي لا تحتوي على محتوى مهم
+Disallow: /assets/
+
+# تحديد خريطة الموقع (Sitemap)
+Sitemap: https://womens-health-calculators.vercel.app/sitemap.xml
+
+# إرشادات إضافية لـ Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+# إرشادات لـ Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
