@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="حاسبة الدورة الشهرية، التبويض، أيام الأمان، وفترة الخصوبة. أدوات دقيقة مدعومة من منظمة الصحة العالمية والكلية الأمريكية لأطباء التوليد.">
     <title>حاسبة الدورة الشهرية والتبويض | صحة المرأة</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
@@ -10,56 +10,46 @@
         :root {
             --primary: #D81B60;
             --primary-dark: #AD1457;
-            --primary-light: #FCE4EC;
             --bg-light: #FDF8F9;
             --text-dark: #2C3E50;
-            --text-gray: #5D6D7E;
             --white: #FFFFFF;
-            --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-            --border-radius: 20px;
+            --shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Tajawal', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-        .container { max-width: 1300px; margin: auto; padding: 20px; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
         header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 1rem 0; text-align: center; }
         .logo { font-size: 1.6rem; font-weight: 700; }
-        nav { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 0.5rem 0; position: sticky; top: 0; }
-        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: color 0.3s; }
+        .tagline { font-size: 0.8rem; opacity: 0.9; }
+        nav { background: var(--white); box-shadow: 0 1px 5px rgba(0,0,0,0.05); position: sticky; top: 0; padding: 0.4rem 0; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--primary); }
-        .breadcrumb { font-size: 0.8rem; margin: 1rem 0; color: #888; }
-        .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 2rem; margin: 2rem 0; }
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--white); border-radius: var(--border-radius); padding: 1.5rem; box-shadow: var(--shadow); transition: transform 0.3s; text-align: center; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
-        .card p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 50px; text-decoration: none; }
-        .btn:hover { background: var(--primary-dark); }
-        .sidebar { background: var(--white); border-radius: var(--border-radius); padding: 1.2rem; box-shadow: var(--shadow); }
-        .sidebar h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.3rem; }
-        .sidebar ul { list-style: none; margin-bottom: 1.5rem; }
-        .sidebar ul li { margin-bottom: 0.5rem; }
-        .sidebar ul li a { color: var(--text-dark); text-decoration: none; display: block; padding: 0.3rem 0; transition: color 0.3s; }
-        .sidebar ul li a:hover { color: var(--primary); padding-right: 0.5rem; }
+        .breadcrumb { font-size: 0.75rem; margin: 0.5rem 0; color: #888; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .top-ad { margin: 0.2rem 0 0.5rem 0; text-align: center; }
+        .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; margin: 1rem 0; }
+        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
+        .card { background: var(--white); border-radius: 20px; padding: 1.2rem; box-shadow: var(--shadow); text-align: center; }
+        .card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .card p { color: #5D6D7E; font-size: 0.85rem; margin-bottom: 1rem; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.4rem 1rem; border-radius: 30px; text-decoration: none; font-size: 0.85rem; }
+        .sidebar { background: var(--white); border-radius: 20px; padding: 1rem; box-shadow: var(--shadow); }
+        .sidebar h3 { color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid #FCE4EC; }
+        .sidebar ul { list-style: none; margin-bottom: 1rem; }
+        .sidebar ul li a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; display: block; padding: 0.2rem 0; }
         .sidebar-ad { margin: 1rem 0; text-align: center; }
-        .mid-ad { margin: 1.5rem 0; text-align: center; }
-        footer { background: #1A2A3A; color: #ccc; margin-top: 2rem; padding: 2rem 0 1rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 1.5rem; }
-        .footer-col h4 { color: var(--primary); margin-bottom: 0.8rem; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 0.4rem; }
-        .footer-col a { color: #ccc; text-decoration: none; transition: color 0.3s; }
-        .footer-col a:hover { color: var(--primary); }
-        .footer-ad { text-align: center; margin: 1rem 0; padding-top: 1rem; border-top: 1px solid #444; }
-        .footer-bottom { text-align: center; font-size: 0.75rem; padding-top: 1rem; border-top: 1px solid #444; margin-top: 1rem; }
-        .disclaimer-footer { font-size: 0.7rem; color: #aaa; margin-top: 0.5rem; }
-        @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } .sidebar { order: 2; } }
+        footer { background: #0F1A24; color: #ccc; margin-top: 1.5rem; padding: 0.8rem 0; font-size: 0.7rem; text-align: center; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.3rem; }
+        .footer-links a { color: #ccc; text-decoration: none; }
+        .footer-links a:hover { color: var(--primary); }
+        .disclaimer { background: #FFF3F0; border-right: 3px solid #FF9800; padding: 0.6rem; border-radius: 12px; margin: 1rem 0; font-size: 0.75rem; text-align: center; }
         @media (max-width: 600px) { .cards-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <header><div class="container"><div class="logo">🌸 صحة المرأة</div></div></header>
+    <header><div class="container"><div class="logo">🌸 صحة المرأة</div><div class="tagline">أدوات حاسبة دقيقة</div></div></header>
     <nav><div class="container"><ul class="nav-links">
         <li><a href="/">الرئيسية</a></li>
         <li><a href="/pregnancy/">الحمل</a></li>
@@ -71,6 +61,21 @@
 
     <div class="container">
         <div class="breadcrumb"><a href="/">الرئيسية</a> / <span>الدورة والتبويض</span></div>
+
+        <!-- إعلان علوي مربع -->
+        <div class="top-ad">
+            <script>
+                atOptions = {
+                    'key' : '9249bc7082ec8de07f68c70c571d2018',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
+        </div>
+
         <div class="main-grid">
             <div>
                 <div class="cards-grid">
@@ -78,11 +83,6 @@
                     <div class="card"><h3>🥚 حاسبة التبويض</h3><p>تحديد يوم الإباضة وأيام الخصوبة العالية لزيادة فرصة الحمل.</p><a href="/period/ovulation.html" class="btn">استخدم</a></div>
                     <div class="card"><h3>🛡️ أيام الأمان</h3><p>حساب الأيام الأقل احتمالية للحمل (طريقة تقويم العزل).</p><a href="/period/safe-days.html" class="btn">استخدم</a></div>
                     <div class="card"><h3>❤️ فترة الخصوبة</h3><p>تقدير النافذة الخصبة التي تزيد فرصة الحمل.</p><a href="/period/fertility.html" class="btn">استخدم</a></div>
-                </div>
-                <!-- إعلان 468×60 -->
-                <div class="mid-ad">
-                    <script>atOptions={'key':'6b7c5f07bc13e8502b34fe1060415402','format':'iframe','height':60,'width':468,'params':{}};</script>
-                    <script src="https://www.highperformanceformat.com/6b7c5f07bc13e8502b34fe1060415402/invoke.js"></script>
                 </div>
             </div>
             <div class="sidebar">
@@ -92,36 +92,26 @@
                     <li><a href="/period/safe-days.html">أيام الأمان</a></li>
                     <li><a href="/period/fertility.html">فترة الخصوبة</a></li>
                 </ul>
-                <!-- إعلان 320×50 -->
                 <div class="sidebar-ad">
-                    <script>atOptions={'key':'f570038711763907f9d041932bc70da6','format':'iframe','height':50,'width':320,'params':{}};</script>
-                    <script src="https://www.highperformanceformat.com/f570038711763907f9d041932bc70da6/invoke.js"></script>
+                    <script>atOptions={'key':'9249bc7082ec8de07f68c70c571d2018','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
                 </div>
-                <h3>🌐 مصادر موثوقة</h3>
-                <ul>
-                    <li><a href="https://www.who.int" target="_blank">منظمة الصحة العالمية</a></li>
-                    <li><a href="https://www.acog.org" target="_blank">ACOG</a></li>
-                </ul>
-                <!-- سوشيال بار -->
-                <div class="sidebar-ad"><script src="https://pl29111033.profitablecpmratenetwork.com/b0/76/52/b07652c8af166665f15defd7d6b8a7ca.js"></script></div>
+                <h3>🌐 مصادر</h3>
+                <ul><li><a href="https://www.who.int" target="_blank">WHO</a></li><li><a href="https://www.acog.org" target="_blank">ACOG</a></li></ul>
             </div>
         </div>
-        <div class="disclaimer" style="background:#FFF3F0; border-right:4px solid #FF9800; padding:1rem; border-radius:16px; margin:1rem 0 2rem;"><strong>⚠️ تنبيه طبي:</strong> هذه الحاسبات تقدم تقديرات، ولا تغني عن استشارة الطبيب المختص.</div>
+        <div class="disclaimer"><strong>⚠️ تنبيه طبي:</strong> أدوات توعوية - استشيري طبيبكِ.</div>
     </div>
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col"><h4>🌸 صحة المرأة</h4><p style="font-size:0.8rem;">أدوات حاسبة ومقالات توعوية.</p></div>
-                <div class="footer-col"><h4>روابط سريعة</h4><ul><li><a href="/">الرئيسية</a></li><li><a href="/pages/about.html">من نحن</a></li><li><a href="/pages/privacy.html">الخصوصية</a></li><li><a href="/pages/contact.html">اتصل بنا</a></li></ul></div>
-                <div class="footer-col"><h4>أدوات الموقع</h4><ul><li><a href="/pregnancy/">الحمل</a></li><li><a href="/period/">الدورة</a></li><li><a href="/health/bmi.html">BMI</a></li></ul></div>
+            <div class="footer-links">
+                <a href="/">الرئيسية</a> | <a href="/pregnancy/">الحمل</a> | <a href="/period/">الدورة</a> | <a href="/health/">الصحة</a> | <a href="/blog/">المدونة</a> | <a href="/pages/about.html">من نحن</a> | <a href="/pages/privacy.html">الخصوصية</a>
             </div>
-            <div class="footer-ad">
-                <script>atOptions={'key':'97b2d8f85cf1bf6fba96d6d1010c6b53','format':'iframe','height':90,'width':728,'params':{}};</script>
-                <script src="https://www.highperformanceformat.com/97b2d8f85cf1bf6fba96d6d1010c6b53/invoke.js"></script>
-            </div>
-            <div class="footer-bottom"><p>© 2025 صحة المرأة</p><div class="disclaimer-footer">⚠️ للأغراض التوعوية فقط - استشيري طبيبكِ</div></div>
+            <div>© 2025 صحة المرأة - جميع الحقوق محفوظة</div>
         </div>
     </footer>
+
+    <script src="https://pl29111033.profitablecpmratenetwork.com/b0/76/52/b07652c8af166665f15defd7d6b8a7ca.js"></script>
 </body>
 </html>
