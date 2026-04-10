@@ -2,71 +2,122 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="مقالات توعوية وقائية عن الحمل والدورة الشهرية. نصائح مدعومة بالمصادر العلمية (WHO، ACOG، CDC).">
     <title>مدونة صحة المرأة | توعية وقائية</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #D81B60;
+            --primary-dark: #AD1457;
+            --bg-light: #FDF8F9;
+            --text-dark: #2C3E50;
+            --white: #FFFFFF;
+            --shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Tajawal', sans-serif; background: #FFF9F9; color: #2D3E50; line-height: 1.6; }
-        .container { max-width: 1200px; margin: auto; padding: 20px; }
-        header { background: linear-gradient(135deg, #E91E63, #C2185B); color: white; padding: 1rem 0; text-align: center; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 1rem 0; text-align: center; }
         .logo { font-size: 1.6rem; font-weight: 700; }
-        nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 0.5rem 0; position: sticky; top: 0; }
-        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 1.2rem; }
-        .nav-links a { text-decoration: none; color: #2D3E50; font-weight: 500; }
-        .nav-links a:hover { color: #E91E63; }
-        .breadcrumb { font-size: 0.8rem; margin: 1rem 0; color: #888; }
-        h1 { color: #E91E63; margin-bottom: 0.5rem; }
-        .sub { color: #4A5568; margin-bottom: 2rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .card { background: white; border-radius: 24px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: #E91E63; margin-bottom: 0.5rem; }
-        .card .date { font-size: 0.7rem; color: #aaa; margin-bottom: 0.5rem; }
-        .card p { color: #4A5568; margin-bottom: 1rem; }
-        .btn { display: inline-block; background: #E91E63; color: white; padding: 0.4rem 1rem; border-radius: 50px; text-decoration: none; font-size: 0.8rem; }
-        .ad-container { background: #f5f5f5; border: 1px dashed #ccc; text-align: center; padding: 1rem; margin: 1.5rem 0; border-radius: 16px; }
-        .ad-inner { min-height: 200px; background: #e9e9e9; display: flex; align-items: center; justify-content: center; border-radius: 12px; }
-        footer { background: #2D3E50; color: #ccc; text-align: center; padding: 1rem; margin-top: 2rem; }
-        footer a { color: #E91E63; text-decoration: none; }
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+        .tagline { font-size: 0.8rem; opacity: 0.9; }
+        nav { background: var(--white); box-shadow: 0 1px 5px rgba(0,0,0,0.05); position: sticky; top: 0; padding: 0.4rem 0; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--primary); }
+        .breadcrumb { font-size: 0.75rem; margin: 0.5rem 0; color: #888; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .top-ad { margin: 0.2rem 0 0.5rem 0; text-align: center; }
+        .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; margin: 1rem 0; }
+        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
+        .blog-card { background: var(--white); border-radius: 20px; padding: 1.2rem; box-shadow: var(--shadow); transition: transform 0.3s; }
+        .blog-card:hover { transform: translateY(-3px); }
+        .blog-card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .blog-card .date { font-size: 0.7rem; color: #888; margin-bottom: 0.5rem; }
+        .blog-card p { color: #5D6D7E; font-size: 0.85rem; margin-bottom: 0.8rem; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.3rem 0.8rem; border-radius: 30px; text-decoration: none; font-size: 0.8rem; }
+        .sidebar { background: var(--white); border-radius: 20px; padding: 1rem; box-shadow: var(--shadow); }
+        .sidebar h3 { color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid #FCE4EC; }
+        .sidebar ul { list-style: none; margin-bottom: 1rem; }
+        .sidebar ul li a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; display: block; padding: 0.2rem 0; }
+        .sidebar-ad { margin: 1rem 0; text-align: center; }
+        footer { background: #0F1A24; color: #ccc; margin-top: 1.5rem; padding: 0.8rem 0; font-size: 0.7rem; text-align: center; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.3rem; }
+        .footer-links a { color: #ccc; text-decoration: none; }
+        .footer-links a:hover { color: var(--primary); }
+        .disclaimer { background: #FFF3F0; border-right: 3px solid #FF9800; padding: 0.6rem; border-radius: 12px; margin: 1rem 0; font-size: 0.75rem; text-align: center; }
+        @media (max-width: 600px) { .cards-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <header><div class="container"><div class="logo">🌸 صحة المرأة</div></div></header>
+    <header><div class="container"><div class="logo">🌸 صحة المرأة</div><div class="tagline">أدوات حاسبة دقيقة</div></div></header>
     <nav><div class="container"><ul class="nav-links">
         <li><a href="/">الرئيسية</a></li>
         <li><a href="/pregnancy/">الحمل</a></li>
         <li><a href="/period/">الدورة</a></li>
         <li><a href="/health/">الصحة العامة</a></li>
         <li><a href="/blog/">المدونة</a></li>
+        <li><a href="/pages/about.html">من نحن</a></li>
     </ul></div></nav>
 
     <div class="container">
         <div class="breadcrumb"><a href="/">الرئيسية</a> / <span>المدونة</span></div>
-        <h1>📝 مدونة صحة المرأة</h1>
-        <div class="sub">مقالات توعوية وقائية مبنية على أحدث التوصيات العلمية. نصائح للحمل الصحي والدورة المنتظمة.</div>
 
-        <div class="ad-container"><div class="ad-inner">[إعلان Adstera/Monetag - 728×90]</div></div>
-
-        <div class="grid">
-            <div class="card">
-                <div class="date">📅 مارس 2025</div>
-                <h3>🩸 الدورة الشهرية الطبيعية: علامات الصحة ومتى تستشيرين الطبيب</h3>
-                <p>تعرفي على خصائص الدورة الطبيعية، الأعراض التي لا تدعو للقلق، والعلامات التي تستدعي استشارة طبية. دليل وقائي لصحتكِ.</p>
-                <a href="/blog/menstrual-health.html" class="btn">اقرأ المقال</a>
-            </div>
-            <!-- يمكن إضافة المزيد من المقالات هنا مستقبلاً -->
+        <!-- إعلان علوي مربع -->
+        <div class="top-ad">
+            <script>
+                atOptions = {
+                    'key' : '9249bc7082ec8de07f68c70c571d2018',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
         </div>
 
-        <div class="ad-container"><div class="ad-inner">[إعلان Adstera/Monetag - 300×250]</div></div>
+        <div class="main-grid">
+            <div>
+                <div class="cards-grid">
+                    <div class="blog-card">
+                        <div class="date">📅 أبريل 2025</div>
+                        <h3>🩸 الدورة الشهرية الطبيعية: علامات الصحة ومتى تستشيرين الطبيب</h3>
+                        <p>تعرفي على خصائص الدورة الطبيعية، الأعراض التي لا تدعو للقلق، والعلامات التي تستدعي استشارة طبية. دليل وقائي لصحتكِ.</p>
+                        <a href="/blog/menstrual-health.html" class="btn">اقرأ المقال</a>
+                    </div>
+                    <!-- مقالات مستقبلية تضاف هنا -->
+                </div>
+            </div>
+            <div class="sidebar">
+                <h3>📌 روابط سريعة</h3>
+                <ul>
+                    <li><a href="/pregnancy/">حاسبة الحمل</a></li>
+                    <li><a href="/period/">حاسبة الدورة</a></li>
+                    <li><a href="/health/bmi.html">حاسبة BMI</a></li>
+                    <li><a href="/period/ovulation.html">حاسبة التبويض</a></li>
+                </ul>
+                <div class="sidebar-ad">
+                    <script>atOptions={'key':'9249bc7082ec8de07f68c70c571d2018','format':'iframe','height':250,'width':300,'params':{}};</script>
+                    <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
+                </div>
+                <h3>🌐 مصادر</h3>
+                <ul><li><a href="https://www.who.int" target="_blank">WHO</a></li><li><a href="https://www.acog.org" target="_blank">ACOG</a></li></ul>
+            </div>
+        </div>
+        <div class="disclaimer"><strong>⚠️ تنبيه طبي:</strong> المقالات للأغراض التوعوية - استشيري طبيبكِ.</div>
     </div>
 
     <footer>
         <div class="container">
-            <p>© 2025 صحة المرأة | <a href="/pages/privacy.html">الخصوصية</a> | <a href="/pages/disclaimer.html">إخلاء مسؤولية</a></p>
+            <div class="footer-links">
+                <a href="/">الرئيسية</a> | <a href="/pregnancy/">الحمل</a> | <a href="/period/">الدورة</a> | <a href="/health/">الصحة</a> | <a href="/blog/">المدونة</a> | <a href="/pages/about.html">من نحن</a> | <a href="/pages/privacy.html">الخصوصية</a>
+            </div>
+            <div>© 2025 صحة المرأة - جميع الحقوق محفوظة</div>
         </div>
     </footer>
+
+    <script src="https://pl29111033.profitablecpmratenetwork.com/b0/76/52/b07652c8af166665f15defd7d6b8a7ca.js"></script>
 </body>
 </html>
