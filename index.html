@@ -36,6 +36,7 @@
         .sidebar ul { list-style: none; margin-bottom: 1rem; }
         .sidebar ul li a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; display: block; padding: 0.2rem 0; }
         .sidebar-ad { margin: 1rem 0; text-align: center; }
+        .mid-ad { margin: 1.5rem 0; text-align: center; } /* ← جديد للإعلان قرب الأدوات */
         footer { background: #0F1A24; color: #ccc; margin-top: 1.5rem; padding: 0.8rem 0; font-size: 0.7rem; text-align: center; }
         .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.3rem; }
         .footer-links a { color: #ccc; text-decoration: none; }
@@ -57,18 +58,35 @@
 
     <div class="container">
         <div class="main-grid">
-            <div class="cards-grid">
-                <div class="card"><h3>🤰 حاسبة الحمل</h3><p>موعد الولادة وأسابيع الحمل</p><a href="/pregnancy/" class="btn">ابدأي</a></div>
-                <div class="card"><h3>🩸 حاسبة الدورة</h3><p>التبويض وأيام الأمان</p><a href="/period/" class="btn">ابدأي</a></div>
-                <div class="card"><h3>📊 BMI</h3><p>مؤشر كتلة الجسم</p><a href="/health/bmi.html" class="btn">ابدأي</a></div>
-                <div class="card"><h3>⚖️ وزن الحمل</h3><p>الزيادة الصحية</p><a href="/health/weight-gain.html" class="btn">ابدأي</a></div>
-                <div class="card"><h3>📈 نمو الجنين</h3><p>مخطط النمو</p><a href="/health/fetal-growth.html" class="btn">ابدأي</a></div>
-                <div class="card"><h3>🔥 سعرات حرارية</h3><p>احتياجك اليومي</p><a href="/health/calories.html" class="btn">ابدأي</a></div>
+            <div>
+                <div class="cards-grid">
+                    <div class="card"><h3>🤰 حاسبة الحمل</h3><p>موعد الولادة وأسابيع الحمل</p><a href="/pregnancy/" class="btn">ابدأي</a></div>
+                    <div class="card"><h3>🩸 حاسبة الدورة</h3><p>التبويض وأيام الأمان</p><a href="/period/" class="btn">ابدأي</a></div>
+                    <div class="card"><h3>📊 BMI</h3><p>مؤشر كتلة الجسم</p><a href="/health/bmi.html" class="btn">ابدأي</a></div>
+                    <div class="card"><h3>⚖️ وزن الحمل</h3><p>الزيادة الصحية</p><a href="/health/weight-gain.html" class="btn">ابدأي</a></div>
+                    <div class="card"><h3>📈 نمو الجنين</h3><p>مخطط النمو</p><a href="/health/fetal-growth.html" class="btn">ابدأي</a></div>
+                    <div class="card"><h3>🔥 سعرات حرارية</h3><p>احتياجك اليومي</p><a href="/health/calories.html" class="btn">ابدأي</a></div>
+                </div>
+
+                <!-- ← إعلان قرب الأدوات (أسفل البطاقات) - الإعلان الرابع 468×60 -->
+                <div class="mid-ad">
+                    <script>
+                        atOptions = {
+                            'key' : '6b7c5f07bc13e8502b34fe1060415402',
+                            'format' : 'iframe',
+                            'height' : 60,
+                            'width' : 468,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/6b7c5f07bc13e8502b34fe1060415402/invoke.js"></script>
+                </div>
             </div>
+
             <div class="sidebar">
                 <h3>📌 روابط سريعة</h3>
                 <ul><li><a href="/pregnancy/">حاسبة الحمل</a></li><li><a href="/period/">حاسبة الدورة</a></li><li><a href="/period/ovulation.html">حاسبة التبويض</a></li><li><a href="/health/bmi.html">BMI</a></li></ul>
-                <!-- إعلان مربع 300x250 -->
+                <!-- إعلان مربع 300x250 في الشريط الجانبي (الإعلان الثالث) -->
                 <div class="sidebar-ad">
                     <script>atOptions={'key':'9249bc7082ec8de07f68c70c571d2018','format':'iframe','height':250,'width':300,'params':{}};</script>
                     <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
