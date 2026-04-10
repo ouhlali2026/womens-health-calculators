@@ -25,10 +25,12 @@
         .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--primary); }
         
-        /* إعلان علوي متجاوب مع مسافة صغيرة جدًا أسفله */
+        /* إعلان علوي بدون هوامش */
         .top-ad {
-            margin: 0.2rem 0 0.2rem 0;
+            margin: 0;
+            padding: 0;
             text-align: center;
+            line-height: 0; /* إزالة أي مسافة إضافية من النص */
         }
         .responsive-ad {
             display: flex;
@@ -55,7 +57,7 @@
             display: grid;
             grid-template-columns: 1fr 320px;
             gap: 1.5rem;
-            margin: 0.5rem 0 1.5rem 0; /* قلصنا المسافة العلوية */
+            margin: 0 0 1.5rem 0; /* إزالة المسافة العلوية تمامًا */
         }
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 0; }
@@ -88,7 +90,7 @@
     </ul></div></nav>
 
     <div class="container">
-        <!-- إعلان علوي متجاوب مع مسافة صغيرة -->
+        <!-- إعلان علوي بدون أي هوامش -->
         <div class="top-ad">
             <div class="responsive-ad">
                 <script>
