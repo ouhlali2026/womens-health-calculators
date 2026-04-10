@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- الصفحة الرئيسية -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- مجلد الحمل (pregnancy) -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/pregnancy/</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- مجلد الدورة (period) -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/period/</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- مجلد الصحة (health) -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/health/</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- مدونة -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/blog/</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- مقالة الدورة الشهرية -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/blog/menstrual-health.html</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- صفحات من نحن -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/pages/about.html</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- صفحة الاتصال -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/pages/contact.html</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- سياسة الخصوصية -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/pages/privacy.html</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- شروط الاستخدام -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/pages/terms.html</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- إخلاء المسؤولية -->
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/pages/disclaimer.html</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+</urlset>
