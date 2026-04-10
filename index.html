@@ -2,47 +2,260 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="حاسبة الحمل، الدورة الشهرية، التبويض، BMI، وزن الحمل، ونمو الجنين. أدوات تفاعلية دقيقة مع إسناد إلى منظمة الصحة العالمية والكليات الطبية. استشارة الطبيب ضرورية.">
-    <meta name="keywords" content="حاسبة الحمل, حاسبة الدورة, حاسبة التبويض, BMI حمل, وزن الحمل, نمو الجنين">
-    <title>صحة المرأة | حاسبات الحمل والدورة والوزن</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="أدوات صحة المرأة التفاعلية: حاسبة الحمل، الدورة الشهرية، التبويض، BMI، وزن الحمل، ونمو الجنين. نتائج فورية وآمنة.">
+    <meta name="keywords" content="صحة المرأة, حاسبة الحمل, حاسبة الدورة الشهرية, حاسبة التبويض, BMI, وزن الحمل">
+    <meta name="author" content="صحة المرأة">
+    <link rel="canonical" href="https://yourdomain.com/">
+    <title>صحة المرأة | أدوات حاسبة الحمل والدورة والتبويض</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Tajawal', sans-serif; background: #FFF9F9; color: #2D3E50; line-height: 1.6; }
-        .container { max-width: 1200px; margin: auto; padding: 20px; }
-        header { background: linear-gradient(135deg, #E91E63, #C2185B); color: white; padding: 1.5rem 0; text-align: center; }
-        .logo { font-size: 1.8rem; font-weight: 700; }
-        .tagline { font-size: 1rem; opacity: 0.9; margin-top: 0.3rem; }
-        nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 1.5rem; padding: 0.8rem 0; }
-        .nav-links a { text-decoration: none; color: #2D3E50; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: #E91E63; }
-        .hero { text-align: center; padding: 2rem 0 1rem; }
-        .hero h1 { font-size: 2rem; color: #E91E63; margin-bottom: 1rem; }
-        .hero p { max-width: 800px; margin: 0 auto; color: #4A5568; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .card { background: white; border-radius: 24px; padding: 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: #E91E63; margin-bottom: 0.8rem; font-size: 1.4rem; }
-        .card p { color: #4A5568; margin-bottom: 1rem; font-size: 0.95rem; }
-        .source { font-size: 0.7rem; color: #888; border-top: 1px solid #eee; padding-top: 0.5rem; margin: 0.5rem 0; direction: ltr; text-align: left; }
-        .btn { display: inline-block; background: #E91E63; color: white; padding: 0.6rem 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 500; transition: background 0.3s; }
-        .btn:hover { background: #C2185B; }
-        .ad-container { background: #f5f5f5; border: 1px dashed #ccc; text-align: center; padding: 1rem; margin: 2rem 0; border-radius: 16px; }
-        .ad-inner { min-height: 250px; background: #e9e9e9; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 0.8rem; color: #888; }
-        .disclaimer { background: #FFF3F0; border-right: 4px solid #FF9800; padding: 1rem; margin: 2rem 0; border-radius: 16px; font-size: 0.85rem; }
-        .disclaimer strong { color: #E91E63; }
-        footer { background: #2D3E50; color: #ccc; text-align: center; padding: 1.5rem; margin-top: 2rem; }
-        footer a { color: #E91E63; text-decoration: none; }
-        @media (max-width: 768px) { .hero h1 { font-size: 1.6rem; } .nav-links { gap: 1rem; } }
+        /* ========================================
+           الألوان الجديدة والمتغيرات
+           ======================================== */
+        :root {
+            --primary: #D81B60;
+            --primary-dark: #AD1457;
+            --primary-light: #FCE4EC;
+            --bg-light: #FDF8F9;
+            --text-dark: #2C3E50;
+            --text-gray: #5D6D7E;
+            --white: #FFFFFF;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            --border-radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== Header ========== */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1.2rem 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.3rem;
+        }
+
+        /* ========== Navigation ========== */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.5rem 0;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* ========== Main Layout (Grid with Sidebar) ========== */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        /* ========== Content (البطاقات) ========== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+        .card p {
+            color: var(--text-gray);
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ========== Sidebar ========== */
+        .sidebar {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 1.2rem;
+            box-shadow: var(--shadow);
+        }
+        .sidebar h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.3rem;
+        }
+        .sidebar ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar ul li {
+            margin-bottom: 0.5rem;
+        }
+        .sidebar ul li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        .sidebar ul li a:hover {
+            color: var(--primary);
+            padding-right: 0.5rem;
+        }
+        .sidebar-ad {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        /* ========== إعلان وسط المحتوى ========== */
+        .mid-ad {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        /* ========== Footer ========== */
+        footer {
+            background: #1A2A3A;
+            color: #ccc;
+            margin-top: 2rem;
+            padding: 2rem 0 1rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .footer-col h4 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 0.4rem;
+        }
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+        .footer-ad {
+            text-align: center;
+            margin: 1rem 0;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+        }
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+            margin-top: 1rem;
+        }
+        .footer-bottom a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .disclaimer-footer {
+            font-size: 0.7rem;
+            color: #aaa;
+            margin-top: 0.5rem;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                order: 2;
+            }
+        }
+        @media (max-width: 600px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">🌸 صحة المرأة</div>
-            <div class="tagline">أدوات حاسبة دقيقة مدعومة بالمصادر العلمية</div>
+            <div class="tagline">أدوات حاسبة دقيقة لصحتكِ وإنجابكِ</div>
         </div>
     </header>
     <nav>
@@ -58,76 +271,160 @@
         </div>
     </nav>
 
-    <main class="container">
-        <div class="hero">
-            <h1>احسبي مؤشرات صحتكِ بدقة</h1>
-            <p>هذه الأدوات مصممة لمساعدتك في متابعة الحمل، الدورة الشهرية، الوزن المثالي، ونمو الجنين. جميع الحاسبات تتبع إرشادات منظمة الصحة العالمية (WHO) والكلية الأمريكية لأطباء التوليد وأمراض النساء (ACOG). النتائج تقريبية وتستند إلى معادلات طبية مثبتة.</p>
+    <div class="container">
+        <div class="main-grid">
+            <!-- المحتوى الرئيسي (البطاقات) -->
+            <div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>🤰 حاسبة الحمل</h3>
+                        <p>احسبي موعد الولادة، كم أسبوع حملكِ، ومراحل نمو الجنين.</p>
+                        <a href="/pregnancy/" class="btn">ابدأي الآن</a>
+                    </div>
+                    <div class="card">
+                        <h3>🩸 حاسبة الدورة الشهرية</h3>
+                        <p>تتبعي دورتكِ، أيام التبويض، وأيام الأمان.</p>
+                        <a href="/period/" class="btn">ابدأي الآن</a>
+                    </div>
+                    <div class="card">
+                        <h3>📊 مؤشر كتلة الجسم (BMI)</h3>
+                        <p>احسبي وزنكِ المثالي ونصائح للحمل الصحي.</p>
+                        <a href="/health/bmi.html" class="btn">ابدأي الآن</a>
+                    </div>
+                    <div class="card">
+                        <h3>⚖️ زيادة الوزن في الحمل</h3>
+                        <p>تتبعي زيادة وزنكِ أسبوعيًا حسب توصيات الأطباء.</p>
+                        <a href="/health/weight-gain.html" class="btn">ابدأي الآن</a>
+                    </div>
+                    <div class="card">
+                        <h3>📈 مخطط نمو الجنين</h3>
+                        <p>قارني طول ووزن جنينكِ بالمعدلات الطبيعية.</p>
+                        <a href="/health/fetal-growth.html" class="btn">ابدأي الآن</a>
+                    </div>
+                    <div class="card">
+                        <h3>🔥 حاسبة السعرات الحرارية</h3>
+                        <p>احتياجكِ اليومي أثناء الحمل أو الرضاعة.</p>
+                        <a href="/health/calories.html" class="btn">ابدأي الآن</a>
+                    </div>
+                </div>
+
+                <!-- الإعلان الرابع (468×60) داخل المحتوى -->
+                <div class="mid-ad">
+                    <script>
+                        atOptions = {
+                            'key' : '6b7c5f07bc13e8502b34fe1060415402',
+                            'format' : 'iframe',
+                            'height' : 60,
+                            'width' : 468,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/6b7c5f07bc13e8502b34fe1060415402/invoke.js"></script>
+                </div>
+            </div>
+
+            <!-- الشريط الجانبي (Sidebar) -->
+            <div class="sidebar">
+                <h3>📌 روابط سريعة</h3>
+                <ul>
+                    <li><a href="/pregnancy/">🤰 حاسبة الحمل</a></li>
+                    <li><a href="/period/">🩸 حاسبة الدورة الشهرية</a></li>
+                    <li><a href="/period/ovulation.html">🥚 حاسبة التبويض</a></li>
+                    <li><a href="/health/bmi.html">📊 حاسبة BMI</a></li>
+                    <li><a href="/health/weight-gain.html">⚖️ وزن الحمل المثالي</a></li>
+                    <li><a href="/health/fetal-growth.html">📈 نمو الجنين</a></li>
+                </ul>
+
+                <!-- الإعلان الثالث (320×50) داخل الشريط الجانبي -->
+                <div class="sidebar-ad">
+                    <script>
+                        atOptions = {
+                            'key' : 'f570038711763907f9d041932bc70da6',
+                            'format' : 'iframe',
+                            'height' : 50,
+                            'width' : 320,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/f570038711763907f9d041932bc70da6/invoke.js"></script>
+                </div>
+
+                <h3>📝 أحدث المقالات</h3>
+                <ul>
+                    <li><a href="/blog/menstrual-health.html">🩸 الدورة الشهرية الطبيعية: علامات الصحة ومتى تستشيرين الطبيب</a></li>
+                </ul>
+
+                <h3>🌐 مصادر موثوقة</h3>
+                <ul>
+                    <li><a href="https://www.who.int" target="_blank" rel="noopener noreferrer">منظمة الصحة العالمية (WHO)</a></li>
+                    <li><a href="https://www.acog.org" target="_blank" rel="noopener noreferrer">الكلية الأمريكية لأطباء التوليد (ACOG)</a></li>
+                    <li><a href="https://www.cdc.gov" target="_blank" rel="noopener noreferrer">مراكز السيطرة على الأمراض (CDC)</a></li>
+                </ul>
+
+                <!-- الإعلان الأول (سوشيال بار) سيتم وضعه هنا أيضًا (قد يكون شريطًا عائمًا لكن نضعه كـ div) -->
+                <div class="sidebar-ad">
+                    <script src="https://pl29111033.profitablecpmratenetwork.com/b0/76/52/b07652c8af166665f15defd7d6b8a7ca.js"></script>
+                </div>
+            </div>
         </div>
 
-        <!-- إعلان علوي -->
-        <div class="ad-container">
-            <div class="ad-inner">[ضع هنا كود إعلان Adstera أو Monetag - مقاس 728×90]</div>
+        <!-- تحذير طبي أسفل المحتوى -->
+        <div class="disclaimer" style="background:#FFF3F0; border-right:4px solid #FF9800; padding:1rem; border-radius:16px; margin:1rem 0 2rem; font-size:0.85rem;">
+            <strong>⚠️ تنبيه طبي مهم:</strong> جميع الأدوات والنتائج هي لأغراض توعوية وتعليمية فقط، ولا تغني عن استشارة الطبيب المختص. يرجى مراجعة مقدم الرعاية الصحية قبل اتخاذ أي قرار متعلق بالحمل أو العلاج.
         </div>
+    </div>
 
-        <div class="grid">
-            <div class="card">
-                <h3>🤰 حاسبة الحمل</h3>
-                <p>تحديد موعد الولادة المتوقع، حساب عمر الجنين بالأسابيع والأشهر، وتتبع مراحل النمو. تعتمد على قاعدة Naegele المعدلة حسب طول الدورة. مناسبة للحمل الطبيعي وأطفال الأنابيب.</p>
-                <div class="source">المصدر: ACOG - American College of Obstetricians and Gynecologists, 2024</div>
-                <a href="/pregnancy/" class="btn">استخدم الحاسبة</a>
-            </div>
-            <div class="card">
-                <h3>🩸 حاسبة الدورة الشهرية</h3>
-                <p>توقع أيام الحيض القادمة، فترة التبويض، وأيام الأمان. تعتمد على متوسط طول الدورة (21-35 يومًا). تساعد في تنظيم الأسرة أو محاولة الحمل.</p>
-                <div class="source">المصدر: Office on Women's Health, U.S. Department of Health & Human Services</div>
-                <a href="/period/" class="btn">استخدم الحاسبة</a>
-            </div>
-            <div class="card">
-                <h3>📊 مؤشر كتلة الجسم (BMI)</h3>
-                <p>حساب BMI قبل الحمل وأثناءه. تصنيف النحافة، الوزن الطبيعي، الزائد، والسمنة وفق معايير منظمة الصحة العالمية. مهم لتقييم مخاطر الحمل.</p>
-                <div class="source">المصدر: WHO - World Health Organization, BMI classification</div>
-                <a href="/health/bmi.html" class="btn">استخدم الحاسبة</a>
-            </div>
-            <div class="card">
-                <h3>⚖️ زيادة الوزن في الحمل</h3>
-                <p>تقدير الزيادة الصحية للوزن حسب BMI قبل الحمل. توصيات معهد الطب (IOM) للحمل بجنين واحد أو توائم. متابعة أسبوعية وشهرية.</p>
-                <div class="source">المصدر: Institute of Medicine (IOM), 2009 guidelines</div>
-                <a href="/health/weight-gain.html" class="btn">استخدم الحاسبة</a>
-            </div>
-            <div class="card">
-                <h3>📈 مخطط نمو الجنين</h3>
-                <p>مقارنة وزن وطول الجنين بالمئينات العمرية حسب أسبوع الحمل. يعتمد على منحنيات النمو من منظمة الصحة العالمية والكليات الطبية.</p>
-                <div class="source">المصدر: WHO Fetal Growth Charts, INTERGROWTH-21st Project</div>
-                <a href="/health/fetal-growth.html" class="btn">استخدم الحاسبة</a>
-            </div>
-            <div class="card">
-                <h3>🔥 حاسبة السعرات الحرارية</h3>
-                <p>احتياجك اليومي من الطاقة أثناء الحمل والرضاعة. تعتمد على معدل الأيض الأساسي (BMR) مع إضافة السعرات الموصى بها من منظمة الأغذية والزراعة.</p>
-                <div class="source">المصدر: FAO/WHO/UNU, 2004; ACOG recommendations</div>
-                <a href="/health/calories.html" class="btn">استخدم الحاسبة</a>
-            </div>
-        </div>
-
-        <!-- إعلان سفلي -->
-        <div class="ad-container">
-            <div class="ad-inner">[ضع هنا كود إعلان Adstera أو Monetag - مقاس 300×250]</div>
-        </div>
-
-        <div class="disclaimer">
-            <strong>⚠️ تنبيه طبي إلزامي:</strong> جميع النتائج التي تقدمها هذه الحاسبات هي تقديرات رقمية مبنية على معادلات علمية من المصادر المذكورة. لا تُغني هذه الأدوات عن استشارة الطبيب المختص أو المتابعة الشخصية. يجب عليكِ مراجعة مقدم الرعاية الصحية قبل اتخاذ أي قرار متعلق بالحمل، النظام الغذائي، أو العلاج.
-        </div>
-    </main>
-
+    <!-- التذييل المحسن (Footer) -->
     <footer>
         <div class="container">
-            <p>© 2025 صحة المرأة - جميع الحقوق محفوظة. المعلومات للأغراض التعليمية فقط.</p>
-            <p>
-                <a href="/pages/about.html">من نحن</a> |
-                <a href="/pages/privacy.html">سياسة الخصوصية</a> |
-                <a href="/pages/terms.html">شروط الاستخدام</a> |
-                <a href="/pages/disclaimer.html">إخلاء المسؤولية</a> |
-                <a href="/pages/contact.html">اتصل بنا</a>
-            </p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🌸 صحة المرأة</h4>
+                    <p style="font-size:0.8rem;">أدوات حاسبة ومقالات توعوية لصحة المرأة العربية.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="/">الرئيسية</a></li>
+                        <li><a href="/pages/about.html">من نحن</a></li>
+                        <li><a href="/pages/privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="/pages/terms.html">شروط الاستخدام</a></li>
+                        <li><a href="/pages/disclaimer.html">إخلاء المسؤولية</a></li>
+                        <li><a href="/pages/contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>أدوات الموقع</h4>
+                    <ul>
+                        <li><a href="/pregnancy/">حاسبة الحمل</a></li>
+                        <li><a href="/period/">حاسبة الدورة</a></li>
+                        <li><a href="/health/bmi.html">حاسبة BMI</a></li>
+                        <li><a href="/period/ovulation.html">حاسبة التبويض</a></li>
+                        <li><a href="/health/weight-gain.html">وزن الحمل</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- الإعلان الثاني (728×90) في التذييل -->
+            <div class="footer-ad">
+                <script>
+                    atOptions = {
+                        'key' : '97b2d8f85cf1bf6fba96d6d1010c6b53',
+                        'format' : 'iframe',
+                        'height' : 90,
+                        'width' : 728,
+                        'params' : {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/97b2d8f85cf1bf6fba96d6d1010c6b53/invoke.js"></script>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 صحة المرأة - جميع الحقوق محفوظة</p>
+                <div class="disclaimer-footer">
+                    ⚠️ هذا الموقع للأغراض التوعوية فقط ولا يغني عن استشارة الطبيب المختص.
+                </div>
+            </div>
         </div>
     </footer>
 </body>
