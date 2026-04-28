@@ -2,159 +2,194 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="حاسبة أيام الأمان بطريقة تقويم الدورة. تحديد الأيام الأقل احتمالية للحمل كوسيلة مساعدة لتنظيم الأسرة الطبيعي. مدعوم من منظمة الصحة العالمية.">
-    <meta name="keywords" content="أيام الأمان, أيام آمنة, منع الحمل الطبيعي, تقويم الدورة, أيام العزل">
-    <meta name="author" content="صحة المرأة">
-    <link rel="canonical" href="https://yourdomain.com/period/safe-days.html">
-    <title>حاسبة أيام الأمان | تنظيم الأسرة الطبيعي | صحة المرأة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="حاسبة أيام الأمان بطريقة تقويم الدورة. حددي الأيام الأقل احتمالية للحمل كوسيلة مساعدة لتنظيم الأسرة الطبيعي. طريقة تقويم العزل - معلومات توعوية فقط.">
+    <title>حاسبة أيام الأمان | تقويم الدورة وتنظيم الأسرة | صحة المرأة</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #D81B60;
+            --primary-dark: #AD1457;
+            --bg-light: #FDF8F9;
+            --text-dark: #2C3E50;
+            --white: #FFFFFF;
+            --shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Tajawal', sans-serif; background: #FFF9F9; color: #2D3E50; line-height: 1.6; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        header { background: linear-gradient(135deg, #E91E63, #C2185B); color: white; padding: 1rem 0; text-align: center; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+        header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 1rem 0; text-align: center; }
         .logo { font-size: 1.6rem; font-weight: 700; }
-        nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 0.5rem 0; position: sticky; top: 0; }
-        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 1.2rem; }
-        .nav-links a { text-decoration: none; color: #2D3E50; font-weight: 500; }
-        .nav-links a:hover { color: #E91E63; }
-        .breadcrumb { font-size: 0.8rem; margin: 1rem 0; color: #888; }
-        .breadcrumb a { color: #E91E63; text-decoration: none; }
-        .card { background: white; border-radius: 24px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .tagline { font-size: 0.8rem; opacity: 0.9; }
+        nav { background: var(--white); box-shadow: 0 1px 5px rgba(0,0,0,0.05); position: sticky; top: 0; padding: 0.4rem 0; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--primary); }
+        .breadcrumb { font-size: 0.75rem; margin: 0.5rem 0; color: #888; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .top-ad { margin: 0.5rem 0 1rem 0; text-align: center; }
+        .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; margin: 1rem 0; }
+        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        .calculator-box { background: var(--white); border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); }
+        .calculator-box h1 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.6rem; }
+        .calculator-box p { color: #5D6D7E; margin-bottom: 1rem; }
         .input-group { margin-bottom: 1rem; }
         label { display: block; margin-bottom: 0.3rem; font-weight: 500; }
         input, select { width: 100%; padding: 0.7rem; border: 1px solid #ddd; border-radius: 12px; font-family: inherit; }
-        button { background: #E91E63; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 50px; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; }
-        .result { background: #FFF3F0; padding: 1rem; border-radius: 16px; margin-top: 1rem; font-weight: bold; line-height: 1.8; }
-        .warning-box { background: #FFEBEE; border-right: 4px solid #E91E63; padding: 0.8rem; margin: 1rem 0; border-radius: 12px; font-size: 0.85rem; }
-        .source { font-size: 0.7rem; color: #888; direction: ltr; text-align: left; margin-top: 1rem; border-top: 1px solid #eee; padding-top: 0.5rem; }
-        .ad-container { background: #f5f5f5; border: 1px dashed #ccc; text-align: center; padding: 1rem; margin: 1.5rem 0; border-radius: 16px; }
-        .ad-inner { min-height: 200px; background: #e9e9e9; display: flex; align-items: center; justify-content: center; }
-        .disclaimer { background: #FFF3F0; border-right: 4px solid #FF9800; padding: 1rem; margin: 1.5rem 0; font-size: 0.85rem; border-radius: 12px; }
-        .internal-links { margin: 1rem 0; text-align: center; }
-        .internal-links a { background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 20px; text-decoration: none; color: #E91E63; margin: 0.2rem; display: inline-block; }
-        footer { background: #2D3E50; color: #ccc; text-align: center; padding: 1rem; margin-top: 2rem; font-size: 0.8rem; }
-        footer a { color: #E91E63; }
-        @media (max-width: 600px) { .container { padding: 15px; } }
+        button { background: var(--primary); color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 30px; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; width: 100%; }
+        button:hover { background: var(--primary-dark); }
+        .result { background: #FFF3F0; padding: 1rem; border-radius: 16px; margin-top: 1rem; font-weight: bold; line-height: 1.8; text-align: center; }
+        .sidebar { background: var(--white); border-radius: 20px; padding: 1rem; box-shadow: var(--shadow); }
+        .sidebar h3 { color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid #FCE4EC; }
+        .sidebar ul { list-style: none; margin-bottom: 1rem; }
+        .sidebar ul li a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; display: block; padding: 0.2rem 0; }
+        .sidebar-ad { margin: 1rem 0; text-align: center; }
+        footer { background: #0F1A24; color: #ccc; margin-top: 1.5rem; padding: 0.8rem 0; font-size: 0.7rem; text-align: center; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.3rem; }
+        .footer-links a { color: #ccc; text-decoration: none; }
+        .footer-links a:hover { color: var(--primary); }
+        .disclaimer { background: #FFF3F0; border-right: 3px solid #FF9800; padding: 0.6rem; border-radius: 12px; margin: 1rem 0; font-size: 0.75rem; text-align: center; }
+        .warning-box { background: #FFEBEE; border-right: 4px solid #E91E63; padding: 0.8rem; border-radius: 12px; margin: 1rem 0; font-size: 0.85rem; }
+        @media (max-width: 600px) { .calculator-box { padding: 1rem; } }
     </style>
 </head>
 <body>
-    <header><div class="container"><div class="logo">🌸 صحة المرأة</div></div></header>
+    <header><div class="container"><div class="logo">🌸 صحة المرأة</div><div class="tagline">أدوات حاسبة دقيقة</div></div></header>
     <nav><div class="container"><ul class="nav-links">
         <li><a href="/">الرئيسية</a></li>
         <li><a href="/pregnancy/">الحمل</a></li>
         <li><a href="/period/">الدورة</a></li>
-        <li><a href="/health/">الصحة</a></li>
+        <li><a href="/health/">الصحة العامة</a></li>
         <li><a href="/blog/">المدونة</a></li>
+        <li><a href="/pages/about.html">من نحن</a></li>
     </ul></div></nav>
 
     <div class="container">
         <div class="breadcrumb"><a href="/">الرئيسية</a> / <a href="/period/">الدورة والتبويض</a> / <span>أيام الأمان</span></div>
-        <h1 style="color:#E91E63; margin:0.5rem 0 0.5rem;">🛡️ حاسبة أيام الأمان</h1>
-        <p>تقدير الأيام الأقل احتمالية للحمل بناءً على طول دورتك الشهرية. هذه الطريقة (تقويم الدورة) هي إحدى وسائل تنظيم الأسرة الطبيعية، لكنها غير دقيقة بنسبة 100%.</p>
 
-        <div class="warning-box">
-            <strong>⚠️ تنبيه مهم:</strong> أيام الأمان ليست وسيلة موثوقة تمامًا لمنع الحمل. تعتمد على انتظام دورتك بشكل كبير. معدل الفشل في السنة الأولى قد يصل إلى 25% عند الاستخدام غير المثالي.
+        <!-- إعلان مربع أعلى الصفحة -->
+        <div class="top-ad">
+            <script>
+                atOptions = {
+                    'key' : '9249bc7082ec8de07f68c70c571d2018',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
         </div>
 
-        <div class="ad-container"><div class="ad-inner">[إعلان Adstera/Monetag - مقاس 728×90]</div></div>
-
-        <div class="card">
-            <div class="input-group">
-                <label>📆 تاريخ أول يوم لآخر دورة شهرية (LMP):</label>
-                <input type="date" id="lmp">
+        <div class="main-grid">
+            <div class="calculator-box">
+                <h1>🛡️ حاسبة أيام الأمان</h1>
+                <p>أيام الأمان هي الأيام التي تقل فيها احتمالية الحمل. هذه الحاسبة تستخدم <strong>طريقة تقويم الدورة (طريقة العزل التقويمي)</strong> لتقدير الأيام الآمنة. هذه الطريقة هي إحدى وسائل تنظيم الأسرة الطبيعية، لكنها غير دقيقة بنسبة 100% وتناسب النساء ذوات الدورة المنتظمة فقط.</p>
+                
+                <div class="warning-box">
+                    <strong>⚠️ تنبيه مهم:</strong> أيام الأمان ليست وسيلة موثوقة تمامًا لمنع الحمل. معدل الفشل في السنة الأولى قد يصل إلى 25% عند الاستخدام غير المثالي. هذه الحاسبة لأغراض توعوية فقط.
+                </div>
+                
+                <div class="input-group">
+                    <label>📆 تاريخ أول يوم لآخر دورة شهرية (LMP):</label>
+                    <input type="date" id="lmp">
+                </div>
+                <div class="input-group">
+                    <label>🔄 متوسط طول الدورة الشهرية (أيام):</label>
+                    <input type="number" id="cycle" value="28" min="21" max="35" step="1">
+                </div>
+                <button onclick="calculateSafeDays()">احسبي أيام الأمان</button>
+                
+                <div class="result" id="result">📌 سيظهر تقدير أيام الأمان هنا بعد الضغط على الزر.</div>
             </div>
-            <div class="input-group">
-                <label>🔄 متوسط طول الدورة الشهرية (أيام):</label>
-                <input type="number" id="cycle" value="28" min="21" max="35">
-                <small>المعدل الطبيعي 28 يومًا. للدورة غير المنتظمة، هذه الحاسبة أقل دقة.</small>
+
+            <div class="sidebar">
+                <h3>📌 أدوات الدورة</h3>
+                <ul>
+                    <li><a href="/period/ovulation.html">🥚 حاسبة التبويض</a></li>
+                    <li><a href="/period/safe-days.html">🛡️ أيام الأمان</a></li>
+                    <li><a href="/period/fertility.html">❤️ فترة الخصوبة</a></li>
+                </ul>
+
+                <div class="sidebar-ad">
+                    <script>
+                        atOptions = {
+                            'key' : '9249bc7082ec8de07f68c70c571d2018',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
+                </div>
+
+                <h3>🌐 مصادر موثوقة</h3>
+                <ul>
+                    <li><a href="https://www.acog.org" target="_blank">الكلية الأمريكية لأطباء التوليد (ACOG)</a></li>
+                    <li><a href="https://www.who.int" target="_blank">منظمة الصحة العالمية</a></li>
+                </ul>
             </div>
-            <button onclick="calculateSafeDays()">احسبي أيام الأمان</button>
-            <div class="result" id="result"></div>
-        </div>
-
-        <div class="source">المصدر: WHO - Family Planning Handbook (Chapter 6: Fertility Awareness-Based Methods); ACOG - Practice Bulletin No. 202</div>
-
-        <div class="ad-container"><div class="ad-inner">[إعلان Adstera/Monetag - مقاس 300×250]</div></div>
-
-        <div class="internal-links">
-            🔗 أدوات مساعدة: 
-            <a href="/period/ovulation.html">حاسبة التبويض</a>
-            <a href="/period/fertility.html">حاسبة فترة الخصوبة</a>
-            <a href="/pregnancy/due-date.html">حاسبة الحمل</a>
         </div>
 
         <div class="disclaimer">
-            <strong>⚠️ تنبيه طبي إلزامي:</strong> أيام الأمان المحسوبة هنا هي تقديرات نظرية. لا تعتمد عليها كوسيلة وحيدة لمنع الحمل خاصة إذا كانت دورتك غير منتظمة أو إذا كنتِ في فترة ما حول سن اليأس أو بعد الولادة. استشيري طبيبكِ لاختيار وسيلة مناسبة.
+            <strong>⚠️ تنبيه طبي مهم:</strong> أيام الأمان المحسوبة هي تقديرات نظرية. لا تعتمد عليها كوسيلة وحيدة لمنع الحمل خاصة إذا كانت دورتكِ غير منتظمة. استشيري طبيبكِ لاختيار وسيلة مناسبة.
         </div>
     </div>
 
     <footer>
         <div class="container">
-            <p>© 2025 صحة المرأة | <a href="/pages/privacy.html">الخصوصية</a> | <a href="/pages/disclaimer.html">إخلاء مسؤولية</a></p>
-            <p><a href="https://www.who.int/publications/i/item/9789241549394" target="_blank" rel="noopener noreferrer">دليل منظمة الصحة العالمية لتنظيم الأسرة</a></p>
+            <div class="footer-links">
+                <a href="/">الرئيسية</a> | <a href="/pregnancy/">الحمل</a> | <a href="/period/">الدورة</a> | <a href="/health/">الصحة</a> | <a href="/blog/">المدونة</a> | <a href="/pages/about.html">من نحن</a> | <a href="/pages/privacy.html">الخصوصية</a>
+            </div>
+            <div>© 2025 صحة المرأة - جميع الحقوق محفوظة</div>
         </div>
     </footer>
+
+    <script src="https://pl29111033.profitablecpmratenetwork.com/b0/76/52/b07652c8af166665f15defd7d6b8a7ca.js"></script>
 
     <script>
         function calculateSafeDays() {
             let lmp = document.getElementById('lmp').value;
             let cycle = parseFloat(document.getElementById('cycle').value);
+            
             if (!lmp) {
-                document.getElementById('result').innerHTML = 'الرجاء إدخال تاريخ آخر دورة شهرية.';
+                document.getElementById('result').innerHTML = '⚠️ الرجاء إدخال تاريخ آخر دورة شهرية.';
                 return;
             }
+            
             let lmpDate = new Date(lmp);
             if (isNaN(lmpDate.getTime())) {
-                document.getElementById('result').innerHTML = 'تاريخ غير صالح.';
+                document.getElementById('result').innerHTML = '⚠️ تاريخ غير صالح. يرجى التأكد.';
                 return;
             }
-            // فترة الخصوبة: قبل التبويض بـ 5 أيام + يوم التبويض نفسه
+            
+            // يوم التبويض التقريبي
             let ovulationDay = new Date(lmpDate);
             ovulationDay.setDate(lmpDate.getDate() + (cycle - 14));
+            
+            // فترة الخصوبة: 5 أيام قبل التبويض + يوم التبويض
             let fertileStart = new Date(ovulationDay);
             fertileStart.setDate(ovulationDay.getDate() - 5);
             let fertileEnd = new Date(ovulationDay);
             
-            // أيام الأمان: الأيام من أول الدورة حتى قبل بدء الخصوبة بيوم، وبعد انتهاء الخصوبة حتى الدورة التالية
-            let safeStart1 = new Date(lmpDate);
-            let safeEnd1 = new Date(fertileStart);
-            safeEnd1.setDate(fertileStart.getDate() - 1);
-            
-            let safeStart2 = new Date(fertileEnd);
-            safeStart2.setDate(fertileEnd.getDate() + 1);
-            let safeEnd2 = new Date(lmpDate);
-            safeEnd2.setDate(lmpDate.getDate() + cycle - 1);
+            // أيام الأمان: الفترة بعد انتهاء الخصوبة حتى الدورة التالية
+            let safeStart = new Date(fertileEnd);
+            safeStart.setDate(fertileEnd.getDate() + 1);
+            let safeEnd = new Date(lmpDate);
+            safeEnd.setDate(lmpDate.getDate() + cycle - 1);
             
             let options = { year: 'numeric', month: 'long', day: 'numeric' };
+            let safeStartFormatted = safeStart.toLocaleDateString('ar-EG', options);
+            let safeEndFormatted = safeEnd.toLocaleDateString('ar-EG', options);
             
-            let period1 = '';
-            if (safeEnd1 >= safeStart1) {
-                period1 = `من ${safeStart1.toLocaleDateString('ar-EG', options)} إلى ${safeEnd1.toLocaleDateString('ar-EG', options)}`;
-            } else {
-                period1 = 'لا توجد أيام أمان قبل التبويض في هذه الدورة القصيرة جدًا.';
-            }
-            
-            let period2 = `من ${safeStart2.toLocaleDateString('ar-EG', options)} إلى ${safeEnd2.toLocaleDateString('ar-EG', options)}`;
-            
-            let today = new Date();
-            let currentStatus = '';
-            if (today >= lmpDate && today <= safeEnd2) {
-                if (today <= safeEnd1) currentStatus = '📍 أنتِ الآن في فترة الأمان الأولى (قبل الخصوبة).';
-                else if (today >= fertileStart && today <= fertileEnd) currentStatus = '📍 أنتِ الآن في فترة الخصوبة العالية (أيام غير آمنة).';
-                else if (today >= safeStart2) currentStatus = '📍 أنتِ الآن في فترة الأمان الثانية (بعد الخصوبة).';
-            } else {
-                currentStatus = '📍 التاريخ المدخل قديم أو مستقبلي. يرجى تحديث تاريخ آخر دورة.';
-            }
+            let fertileStartFormatted = fertileStart.toLocaleDateString('ar-EG', options);
+            let fertileEndFormatted = fertileEnd.toLocaleDateString('ar-EG', options);
             
             document.getElementById('result').innerHTML = `
-                📅 فترة الخصوبة (أيام غير آمنة): <strong>${fertileStart.toLocaleDateString('ar-EG', options)}</strong> إلى <strong>${fertileEnd.toLocaleDateString('ar-EG', options)}</strong><br>
-                ✅ أيام الأمان (أقل احتمالية للحمل):<br>
-                - الفترة الأولى: ${period1}<br>
-                - الفترة الثانية: ${period2}<br>
-                ${currentStatus}<br>
-                ⚠️ هذه الطريقة غير دقيقة بنسبة 100%، خصوصًا مع عدم انتظام الدورة.
+                📅 <strong>فترة الخصوبة (أيام غير آمنة):</strong> من ${fertileStartFormatted} إلى ${fertileEndFormatted}<br>
+                ✅ <strong>أيام الأمان (أقل احتمالية للحمل):</strong> من ${safeStartFormatted} إلى ${safeEndFormatted}<br>
+                ⚠️ هذه الطريقة غير دقيقة بنسبة 100%. تناسب فقط النساء ذوات الدورة المنتظمة.
             `;
         }
     </script>
