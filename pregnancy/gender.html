@@ -2,118 +2,207 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="حاسبة جنس الجنين بناءً على طرق غير مؤكدة طبياً (طريقة شيتلز، التقويم القمري الصيني). النتائج تقديرية وللتسلية فقط.">
-    <meta name="keywords" content="جنس الجنين, حاسبة جنس المولود, طريقة شيتلز, التقويم الصيني">
-    <title>حاسبة جنس الجنين | صحة المرأة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="حاسبة جنس الجنين: طريقة شيتلز والتقويم الصيني لتقدير نوع الجنين. للمتعة والتسلية فقط - الطرق غير معتمدة طبياً. اكتشفي أقرب توقع لجنس مولودك القادم.">
+    <title>حاسبة جنس الجنين | طريقة شيتلز والتقويم الصيني | صحة المرأة</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #D81B60;
+            --primary-dark: #AD1457;
+            --bg-light: #FDF8F9;
+            --text-dark: #2C3E50;
+            --white: #FFFFFF;
+            --shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Tajawal', sans-serif; background: #FFF9F9; color: #2D3E50; line-height: 1.6; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        header { background: linear-gradient(135deg, #E91E63, #C2185B); color: white; padding: 1rem 0; text-align: center; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+        header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 1rem 0; text-align: center; }
         .logo { font-size: 1.6rem; font-weight: 700; }
-        nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 0.5rem 0; position: sticky; top: 0; }
-        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 1.2rem; }
-        .nav-links a { text-decoration: none; color: #2D3E50; font-weight: 500; }
-        .nav-links a:hover { color: #E91E63; }
-        .card { background: white; border-radius: 24px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .tagline { font-size: 0.8rem; opacity: 0.9; }
+        nav { background: var(--white); box-shadow: 0 1px 5px rgba(0,0,0,0.05); position: sticky; top: 0; padding: 0.4rem 0; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--primary); }
+        .breadcrumb { font-size: 0.75rem; margin: 0.5rem 0; color: #888; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; margin: 1rem 0; }
+        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        .calculator-box { background: var(--white); border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); }
+        .calculator-box h1 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.6rem; }
+        .calculator-box p { color: #5D6D7E; margin-bottom: 1rem; }
         .input-group { margin-bottom: 1rem; }
         label { display: block; margin-bottom: 0.3rem; font-weight: 500; }
         input, select { width: 100%; padding: 0.7rem; border: 1px solid #ddd; border-radius: 12px; font-family: inherit; }
-        button { background: #E91E63; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 50px; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; }
-        .result { background: #FFF3F0; padding: 1rem; border-radius: 16px; margin-top: 1rem; font-weight: bold; }
-        .warning { background: #FFEBEE; border-right: 4px solid #E91E63; padding: 0.8rem; margin: 1rem 0; border-radius: 12px; font-size: 0.85rem; }
-        .source { font-size: 0.7rem; color: #888; direction: ltr; text-align: left; margin-top: 1rem; border-top: 1px solid #eee; padding-top: 0.5rem; }
-        .ad-container { background: #f5f5f5; border: 1px dashed #ccc; text-align: center; padding: 1rem; margin: 1.5rem 0; border-radius: 16px; }
-        .ad-inner { min-height: 200px; background: #e9e9e9; display: flex; align-items: center; justify-content: center; }
-        .disclaimer { background: #FFF3F0; border-right: 4px solid #FF9800; padding: 1rem; margin: 1.5rem 0; font-size: 0.85rem; border-radius: 12px; }
-        footer { background: #2D3E50; color: #ccc; text-align: center; padding: 1rem; margin-top: 2rem; font-size: 0.8rem; }
-        footer a { color: #E91E63; }
-        @media (max-width: 600px) { .container { padding: 15px; } }
+        button { background: var(--primary); color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 30px; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; width: 100%; }
+        button:hover { background: var(--primary-dark); }
+        .result { background: #FFF3F0; padding: 1rem; border-radius: 16px; margin-top: 1rem; font-weight: bold; line-height: 1.8; text-align: center; }
+        .top-ad { margin-bottom: 1.5rem; text-align: center; }
+        .sidebar { background: var(--white); border-radius: 20px; padding: 1rem; box-shadow: var(--shadow); }
+        .sidebar h3 { color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid #FCE4EC; }
+        .sidebar ul { list-style: none; margin-bottom: 1rem; }
+        .sidebar ul li a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; display: block; padding: 0.2rem 0; }
+        .sidebar-ad { margin: 1rem 0; text-align: center; }
+        footer { background: #0F1A24; color: #ccc; margin-top: 1.5rem; padding: 0.8rem 0; font-size: 0.7rem; text-align: center; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.3rem; }
+        .footer-links a { color: #ccc; text-decoration: none; }
+        .footer-links a:hover { color: var(--primary); }
+        .disclaimer { background: #FFF3F0; border-right: 3px solid #FF9800; padding: 0.6rem; border-radius: 12px; margin: 1rem 0; font-size: 0.75rem; text-align: center; }
+        .warning-box { background: #FFEBEE; border-right: 4px solid #E91E63; padding: 0.8rem; border-radius: 12px; margin: 1rem 0; font-size: 0.85rem; }
+        .divider { text-align: center; margin: 1rem 0; color: #888; font-size: 0.8rem; }
+        @media (max-width: 600px) { .calculator-box { padding: 1rem; } }
     </style>
 </head>
 <body>
-    <header><div class="container"><div class="logo">🌸 صحة المرأة</div></div></header>
+    <header><div class="container"><div class="logo">🌸 صحة المرأة</div><div class="tagline">أدوات حاسبة دقيقة</div></div></header>
     <nav><div class="container"><ul class="nav-links">
         <li><a href="/">الرئيسية</a></li>
         <li><a href="/pregnancy/">الحمل</a></li>
         <li><a href="/period/">الدورة</a></li>
-        <li><a href="/health/">الصحة</a></li>
+        <li><a href="/health/">الصحة العامة</a></li>
+        <li><a href="/blog/">المدونة</a></li>
+        <li><a href="/pages/about.html">من نحن</a></li>
     </ul></div></nav>
 
-    <main class="container">
-        <h1 style="color:#E91E63; margin:1rem 0 0.5rem;">👶 حاسبة جنس الجنين</h1>
-        <p>تقدير احتمالية جنس الجنين بناءً على طرق تقليدية غير مثبتة علمياً. هذه النتائج للتسلية فقط ولا تعتمد عليها في التخطيط.</p>
+    <div class="container">
+        <div class="breadcrumb"><a href="/">الرئيسية</a> / <a href="/pregnancy/">الحمل</a> / <span>جنس الجنين</span></div>
 
-        <div class="warning">
-            <strong>⚠️ تنبيه:</strong> الطرق المستخدمة (شيتلز، التقويم الصيني) ليست معتمدة طبياً. الطريقة الوحيدة المؤكدة لتحديد الجنس هي السونار (عادة بعد الأسبوع 18) أو الفحوصات الجينية.
+        <!-- إعلان مربع أعلى الحاسبة -->
+        <div class="top-ad">
+            <script>
+                atOptions = {
+                    'key' : '9249bc7082ec8de07f68c70c571d2018',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
         </div>
 
-        <div class="ad-container"><div class="ad-inner">[إعلان Adstera/Monetag 728×90]</div></div>
+        <div class="main-grid">
+            <div class="calculator-box">
+                <h1>👶 حاسبة جنس الجنين</h1>
+                <p>هل تتساءلين هل مولودك القادم ذكر أم أنثى؟ جربي حاسبة جنس الجنين التي تعتمد على <strong>طريقة شيتلز الشهيرة</strong> و<strong>التقويم القمري الصيني القديم</strong>. هذه الطرق تقليدية وغير معتمدة طبياً، لكنها ممتعة للتسلية وانتظار مولودك الجديد. تذكري أن الطريقة الوحيدة المؤكدة لتحديد جنس الجنين هي السونار (عادة بعد الأسبوع 18) أو الفحوصات الجينية.</p>
+                
+                <div class="warning-box">
+                    <strong>⚠️ تنبيه:</strong> الطرق المستخدمة (شيتلز، التقويم الصيني) ليست معتمدة طبياً. النتائج تقديرية وللتسلية فقط. الطريقة الوحيدة المؤكدة لتحديد جنس الجنين هي الفحص الطبي.
+                </div>
 
-        <div class="card">
-            <h3 style="color:#E91E63;">📅 طريقة شيتلز (Shettles Method)</h3>
-            <div class="input-group">
-                <label>عمر الأم عند الحمل (بالسنوات):</label>
-                <input type="number" id="age" min="15" max="55" step="1">
+                <div class="input-group">
+                    <label>📅 عمر الأم عند الحمل (بالسنوات):</label>
+                    <input type="number" id="age" min="15" max="55" step="1" placeholder="مثال: 30">
+                </div>
+                <div class="input-group">
+                    <label>📆 الشهر القمري للحمل (من 1 إلى 12):</label>
+                    <input type="number" id="lunarMonth" min="1" max="12" step="1" placeholder="مثال: 6">
+                </div>
+                <button onclick="calculateChinese()">احسبي بالتقويم الصيني</button>
+
+                <div class="divider">━━━━━━━━━━━━━━━━━━━━</div>
+
+                <div class="input-group">
+                    <label>⏰ عدد الأيام قبل التبويض التي تم فيها الجماع:</label>
+                    <select id="timing">
+                        <option value="0">يوم التبويض نفسه</option>
+                        <option value="1">قبل يوم واحد</option>
+                        <option value="2">قبل يومين</option>
+                        <option value="3">قبل 3 أيام</option>
+                        <option value="4">قبل 4 أيام أو أكثر</option>
+                    </select>
+                </div>
+                <button onclick="calculateShettles()">احسبي بطريقة شيتلز</button>
+
+                <div class="result" id="result">📌 سيظهر توقع جنس الجنين هنا بعد الضغط على أحد الزرين.</div>
             </div>
-            <div class="input-group">
-                <label>الشهر القمري للحمل (من 1 إلى 12):</label>
-                <input type="number" id="lunarMonth" min="1" max="12" step="1">
+
+            <div class="sidebar">
+                <h3>📌 أدوات الحمل</h3>
+                <ul>
+                    <li><a href="/pregnancy/due-date.html">📅 موعد الولادة</a></li>
+                    <li><a href="/pregnancy/weeks-months.html">📊 أسابيع الحمل</a></li>
+                    <li><a href="/pregnancy/ivf.html">🧪 أطفال الأنابيب</a></li>
+                    <li><a href="/pregnancy/gender.html">👶 جنس الجنين</a></li>
+                    <li><a href="/pregnancy/advanced.html">⚙️ حمل متقدم</a></li>
+                </ul>
+
+                <div class="sidebar-ad">
+                    <script>
+                        atOptions = {
+                            'key' : '9249bc7082ec8de07f68c70c571d2018',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
+                </div>
+
+                <h3>🌐 مصادر موثوقة</h3>
+                <ul>
+                    <li><a href="https://www.acog.org" target="_blank">الكلية الأمريكية لأطباء التوليد (ACOG)</a></li>
+                    <li><a href="https://www.who.int" target="_blank">منظمة الصحة العالمية</a></li>
+                </ul>
             </div>
-            <button onclick="calculateChinese()">احسبي بالتقويم الصيني</button>
-            <div class="result" id="chineseResult"></div>
         </div>
-
-        <div class="card">
-            <h3 style="color:#E91E63;">📅 طريقة شيتلز (Shettles)</h3>
-            <div class="input-group">
-                <label>عدد الأيام قبل التبويض التي تم فيها الجماع:</label>
-                <select id="timing">
-                    <option value="0">يوم التبويض نفسه</option>
-                    <option value="1">قبل يوم واحد</option>
-                    <option value="2">قبل يومين</option>
-                    <option value="3">قبل 3 أيام</option>
-                    <option value="4">قبل 4 أيام أو أكثر</option>
-                </select>
-            </div>
-            <button onclick="calculateShettles()">احسبي بطريقة شيتلز</button>
-            <div class="result" id="shettlesResult"></div>
-        </div>
-
-        <div class="source">المصدر: Shettles Method (1960s) - غير معتمد طبياً | التقويم القمري الصيني التقليدي</div>
-
-        <div class="ad-container"><div class="ad-inner">[إعلان Adstera/Monetag 300×250]</div></div>
 
         <div class="disclaimer">
-            <strong>⚠️ تنبيه طبي:</strong> هذه الحاسبة لأغراض ترفيهية وتوعوية فقط. لا تعتمد على نتائجها في أي قرار طبي. الطريقة الوحيدة المؤكدة لتحديد جنس الجنين هي الفحص الطبي.
+            <strong>⚠️ تنبيه طبي مهم:</strong> هذه الحاسبة لأغراض ترفيهية وتوعوية فقط. لا تعتمد على نتائجها في أي قرار طبي. الطريقة الوحيدة المؤكدة لتحديد جنس الجنين هي الفحص الطبي (السونار أو الفحوصات الجينية).
         </div>
-    </main>
+    </div>
 
-    <footer><div class="container">© 2025 صحة المرأة | <a href="/pages/privacy.html">الخصوصية</a> | <a href="/pages/disclaimer.html">إخلاء مسؤولية</a></div></footer>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">الرئيسية</a> | <a href="/pregnancy/">الحمل</a> | <a href="/period/">الدورة</a> | <a href="/health/">الصحة</a> | <a href="/blog/">المدونة</a> | <a href="/pages/about.html">من نحن</a> | <a href="/pages/privacy.html">الخصوصية</a>
+            </div>
+            <div>© 2025 صحة المرأة - جميع الحقوق محفوظة</div>
+        </div>
+    </footer>
+
+    <script src="https://pl29111033.profitablecpmratenetwork.com/b0/76/52/b07652c8af166665f15defd7d6b8a7ca.js"></script>
 
     <script>
         function calculateChinese() {
             let age = parseFloat(document.getElementById('age').value);
             let month = parseFloat(document.getElementById('lunarMonth').value);
+            
             if (isNaN(age) || isNaN(month)) {
-                document.getElementById('chineseResult').innerHTML = 'الرجاء إدخال العمر والشهر القمري.';
+                document.getElementById('result').innerHTML = '⚠️ الرجاء إدخال عمر الأم والشهر القمري.';
                 return;
             }
-            // التقويم الصيني التقليدي: جدول مبسط (غير دقيق علمياً)
-            let gender = ( (age + month) % 2 === 0 ) ? '👧 أنثى (احتمال 50%)' : '👦 ذكر (احتمال 50%)';
-            document.getElementById('chineseResult').innerHTML = `التقويم الصيني يشير إلى: ${gender}<br>⚠️ هذه النتيجة تخمينية وغير مؤكدة.`;
+            if (age < 15 || age > 55) {
+                document.getElementById('result').innerHTML = '⚠️ العمر المدخل غير منطقي. يرجى إدخال عمر بين 15 و 55 سنة.';
+                return;
+            }
+            if (month < 1 || month > 12) {
+                document.getElementById('result').innerHTML = '⚠️ الشهر القمري يجب أن يكون بين 1 و 12.';
+                return;
+            }
+            
+            // التقويم الصيني التقليدي: جدول مبسط
+            let gender = ((age + month) % 2 === 0) ? '👧 أنثى (احتمال 50%)' : '👦 ذكر (احتمال 50%)';
+            document.getElementById('result').innerHTML = `📌 <strong>التقويم الصيني</strong><br>يشير إلى: ${gender}<br>📍 ملاحظة: هذه النتيجة تخمينية وغير مؤكدة طبياً.`;
         }
 
         function calculateShettles() {
             let timing = parseInt(document.getElementById('timing').value);
-            let result = '';
-            if (timing === 0) result = '👦 ذكر (احتمال أعلى حسب شيتلز)';
-            else if (timing === 1) result = '👦 ذكر (احتمال متوسط)';
-            else if (timing === 2) result = '👧 أنثى (احتمال متوسط)';
-            else result = '👧 أنثى (احتمال أعلى حسب شيتلز)';
-            document.getElementById('shettlesResult').innerHTML = `طريقة شيتلز تشير إلى: ${result}<br>⚠️ هذه النظرية غير معتمدة طبياً، والنتائج الفعلية قد تختلف.`;
+            let resultText = '';
+            
+            if (timing === 0) {
+                resultText = '👦 ذكر (احتمال أعلى حسب شيتلز)';
+            } else if (timing === 1) {
+                resultText = '👦 ذكر (احتمال متوسط)';
+            } else if (timing === 2) {
+                resultText = '👧 أنثى (احتمال متوسط)';
+            } else {
+                resultText = '👧 أنثى (احتمال أعلى حسب شيتلز)';
+            }
+            
+            document.getElementById('result').innerHTML = `📌 <strong>طريقة شيتلز</strong><br>تشير إلى: ${resultText}<br>📍 ملاحظة: هذه النظرية غير معتمدة طبياً، والنتائج الفعلية قد تختلف.`;
         }
     </script>
 </body>
