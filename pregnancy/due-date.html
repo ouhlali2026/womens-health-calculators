@@ -1,10 +1,15 @@
+✅ حاسبة موعد الولادة (مصححة)
+
+الرابط: /pregnancy/due-date.html
+
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="حاسبة موعد الولادة المتوقع بناءً على تاريخ أول يوم لآخر دورة شهرية وطول الدورة. نتائج تقريبية - استشيري طبيبكِ.">
-    <title>حاسبة موعد الولادة | صحة المرأة</title>
+    <meta name="description" content="حاسبة دقيقة لحساب موعد الولادة المتوقع بناءً على تاريخ أول يوم لآخر دورة شهرية (LMP) وطول الدورة الشهرية. تعتمد على قاعدة Naegele المعدلة من الكلية الأمريكية لأطباء التوليد (ACOG).">
+    <title>حاسبة موعد الولادة | دقيقة وسهلة | صحة المرأة</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -30,10 +35,11 @@
         .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; margin: 1rem 0; }
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
         .calculator-box { background: var(--white); border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); }
-        .calculator-box h2 { color: var(--primary); margin-bottom: 1rem; font-size: 1.4rem; }
+        .calculator-box h1 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.6rem; }
+        .calculator-box p { color: #5D6D7E; margin-bottom: 1rem; }
         .input-group { margin-bottom: 1rem; }
         label { display: block; margin-bottom: 0.3rem; font-weight: 500; }
-        input, select { width: 100%; padding: 0.7rem; border: 1px solid #ddd; border-radius: 12px; font-family: inherit; }
+        input { width: 100%; padding: 0.7rem; border: 1px solid #ddd; border-radius: 12px; font-family: inherit; }
         button { background: var(--primary); color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 30px; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; width: 100%; }
         button:hover { background: var(--primary-dark); }
         .result { background: #FFF3F0; padding: 1rem; border-radius: 16px; margin-top: 1rem; font-weight: bold; line-height: 1.8; text-align: center; }
@@ -66,17 +72,16 @@
 
         <div class="main-grid">
             <div class="calculator-box">
-                <h2>📅 حاسبة موعد الولادة</h2>
-                <p>أدخلي تاريخ أول يوم لآخر دورة شهرية (LMP) ومتوسط طول دورتكِ لحساب موعد الولادة المتوقع.</p>
+                <h1>📅 حاسبة موعد الولادة</h1>
+                <p>اكتشفي موعد ولادتك المتوقع بدقة باستخدام هذه الأداة البسيطة. تعتمد الحاسبة على قاعدة Naegele المعدلة وفقًا لإرشادات الكلية الأمريكية لأطباء التوليد وأمراض النساء (ACOG). النتائج تقريبية وتحتاج إلى متابعة طبية لحالتكِ الخاصة.</p>
                 
                 <div class="input-group">
-                    <label>📆 تاريخ أول يوم لآخر دورة (LMP):</label>
+                    <label>📆 تاريخ أول يوم لآخر دورة شهرية (LMP):</label>
                     <input type="date" id="lmpDate">
                 </div>
                 <div class="input-group">
-                    <label>🔄 متوسط طول الدورة (أيام):</label>
+                    <label>🔄 متوسط طول الدورة الشهرية (أيام):</label>
                     <input type="number" id="cycleLength" value="28" min="21" max="35" step="1">
-                    <small>المعدل الطبيعي 28 يومًا (بين 21-35 يومًا).</small>
                 </div>
                 <button onclick="calculateDueDate()">احسبي موعد الولادة</button>
                 <div class="result" id="result"></div>
@@ -91,7 +96,8 @@
                     <li><a href="/pregnancy/gender.html">👶 جنس الجنين</a></li>
                     <li><a href="/pregnancy/advanced.html">⚙️ حمل متقدم</a></li>
                 </ul>
-                <!-- إعلان مربع 300x250 في الشريط الجانبي -->
+
+                <!-- إعلان Adstera مربع 300x250 -->
                 <div class="sidebar-ad">
                     <script>
                         atOptions = {
@@ -104,11 +110,18 @@
                     </script>
                     <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
                 </div>
+
                 <h3>🌐 مصادر موثوقة</h3>
-                <ul><li><a href="https://www.who.int" target="_blank">منظمة الصحة العالمية</a></li><li><a href="https://www.acog.org" target="_blank">ACOG</a></li></ul>
+                <ul>
+                    <li><a href="https://www.acog.org/womens-health/faqs/how-to-calculate-your-due-date" target="_blank">ACOG - طريقة حساب موعد الولادة</a></li>
+                    <li><a href="https://www.who.int" target="_blank">منظمة الصحة العالمية</a></li>
+                </ul>
             </div>
         </div>
-        <div class="disclaimer"><strong>⚠️ تنبيه طبي:</strong> هذه الحاسبة تقدم تقديرات تقريبية. استشيري طبيبكِ للحصول على متابعة دقيقة.</div>
+
+        <div class="disclaimer">
+            <strong>⚠️ تنبيه طبي مهم:</strong> هذه الحاسبة تقدم تقديرات تقريبية بناءً على معادلات علمية. لا تغني عن استشارة الطبيب المختص. تأكدي دائمًا من موعد ولادتك عبر الفحص السريري والسونار.
+        </div>
     </div>
 
     <footer>
@@ -120,6 +133,7 @@
         </div>
     </footer>
 
+    <!-- إعلان سوشيال بار -->
     <script src="https://pl29111033.profitablecpmratenetwork.com/b0/76/52/b07652c8af166665f15defd7d6b8a7ca.js"></script>
 
     <script>
@@ -128,17 +142,17 @@
             let cycle = parseInt(document.getElementById('cycleLength').value);
             
             if (!lmp) {
-                document.getElementById('result').innerHTML = '⚠️ الرجاء إدخال تاريخ آخر دورة شهرية.';
+                document.getElementById('result').innerHTML = '⚠️ الرجاء إدخال تاريخ أول يوم لآخر دورة شهرية.';
                 return;
             }
             
             let lmpDate = new Date(lmp);
             if (isNaN(lmpDate.getTime())) {
-                document.getElementById('result').innerHTML = '⚠️ تاريخ غير صالح.';
+                document.getElementById('result').innerHTML = '⚠️ تاريخ غير صالح. يرجى التأكد من التاريخ.';
                 return;
             }
             
-            // تعديل الفرق بناءً على طول الدورة (المقارنة بـ 28 يوم)
+            // حساب موعد الولادة: تاريخ آخر دورة + 280 يوم + (طول الدورة - 28)
             let cycleDiff = cycle - 28;
             let dueDate = new Date(lmpDate);
             dueDate.setDate(lmpDate.getDate() + 280 + cycleDiff);
@@ -146,18 +160,21 @@
             let options = { year: 'numeric', month: 'long', day: 'numeric' };
             let dueFormatted = dueDate.toLocaleDateString('ar-EG', options);
             
-            // حساب الأسبوع الحالي
+            // حساب الأسبوع الحالي التقريبي
             let today = new Date();
             let diffDays = Math.floor((today - lmpDate) / (1000 * 60 * 60 * 24));
             let currentWeek = Math.floor(diffDays / 7);
+            let weekText = '';
             
             if (diffDays >= 0 && diffDays <= 280) {
-                document.getElementById('result').innerHTML = `📌 موعد الولادة المتوقع: <strong>${dueFormatted}</strong><br>📊 عمر حملكِ الحالي: حوالي <strong>${currentWeek}</strong> أسبوعًا.`;
+                weekText = `<br>📊 عمر حملكِ الحالي: حوالي <strong>${currentWeek}</strong> أسبوعًا و ${diffDays % 7} يومًا.`;
             } else if (diffDays < 0) {
-                document.getElementById('result').innerHTML = `📌 موعد الولادة المتوقع: ${dueFormatted}<br>⚠️ التاريخ المدخل يقع في المستقبل. يرجى التأكد.`;
+                weekText = `<br>⚠️ التاريخ المدخل يقع في المستقبل. يرجى التأكد من تاريخ آخر دورة.`;
             } else {
-                document.getElementById('result').innerHTML = `📌 موعد الولادة المتوقع: ${dueFormatted}<br>⚠️ تجاوزتِ 40 أسبوعًا. استشيري طبيبكِ فورًا.`;
+                weekText = `<br>⚠️ تجاوزتِ 40 أسبوعًا. يُفضل استشارة طبيبكِ فورًا.`;
             }
+            
+            document.getElementById('result').innerHTML = `📌 موعد الولادة المتوقع: <strong>${dueFormatted}</strong>${weekText}<br>📍 ملاحظة: 5% فقط من النساء يلدن في التاريخ المحسوب بدقة.`;
         }
     </script>
 </body>
