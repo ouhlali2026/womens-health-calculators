@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>صحة المرأة | أدوات حاسبة الحمل والدورة</title>
+    <meta name="description" content="أدوات صحة المرأة التفاعلية: حاسبة الحمل، الدورة الشهرية، التبويض، BMI، وزن الحمل، ونمو الجنين. أحدث المقالات التوعوية.">
+    <title>صحة المرأة | أدوات حاسبة ومقالات توعوية</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -15,105 +16,178 @@
             --shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Tajawal', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.5; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
         header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 1rem 0; text-align: center; }
-        .logo { font-size: 1.6rem; font-weight: 700; }
-        .tagline { font-size: 0.8rem; opacity: 0.9; }
-        nav { background: var(--white); box-shadow: 0 1px 5px rgba(0,0,0,0.05); position: sticky; top: 0; padding: 0.4rem 0; }
-        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; }
+        .logo { font-size: 1.8rem; font-weight: 700; }
+        .tagline { font-size: 0.9rem; opacity: 0.9; margin-top: 0.3rem; }
+        nav { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; padding: 0.5rem 0; z-index: 100; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
-        
-        /* إعلان علوي - مسافة صغيرة */
-        .top-ad {
-            margin: 0.2rem 0 0.5rem 0;
-            text-align: center;
-        }
-        
-        .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; margin: 1.5rem 0; }
-        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
-        .card { background: var(--white); border-radius: 20px; padding: 1.2rem; box-shadow: var(--shadow); text-align: center; }
-        .card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.2rem; }
-        .card p { color: #5D6D7E; font-size: 0.85rem; margin-bottom: 1rem; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.4rem 1rem; border-radius: 30px; text-decoration: none; font-size: 0.85rem; }
-        .sidebar { background: var(--white); border-radius: 20px; padding: 1rem; box-shadow: var(--shadow); }
-        .sidebar h3 { color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid #FCE4EC; }
-        .sidebar ul { list-style: none; margin-bottom: 1rem; }
-        .sidebar ul li a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; display: block; padding: 0.2rem 0; }
+        .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 2rem; margin: 2rem 0; }
+        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { margin-top: 1rem; } }
+        /* البطاقات الرئيسية */
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .card { background: var(--white); border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); transition: transform 0.3s; text-align: center; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: var(--primary); margin-bottom: 0.8rem; font-size: 1.3rem; }
+        .card p { color: #5D6D7E; margin-bottom: 1.2rem; font-size: 0.9rem; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1.2rem; border-radius: 30px; text-decoration: none; font-size: 0.85rem; transition: 0.3s; }
+        .btn:hover { background: var(--primary-dark); }
+        /* قسم المقالات الحديثة */
+        .latest-articles { margin-bottom: 2rem; }
+        .section-title { font-size: 1.4rem; color: var(--primary); margin-bottom: 1rem; border-right: 4px solid var(--primary); padding-right: 0.7rem; }
+        .articles-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+        .article-card { background: var(--white); border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; transition: 0.3s; }
+        .article-card:hover { transform: translateY(-3px); }
+        .article-img { width: 100%; height: 150px; object-fit: cover; }
+        .article-info { padding: 1rem; }
+        .article-date { font-size: 0.7rem; color: #888; margin-bottom: 0.3rem; }
+        .article-card h4 { color: var(--primary-dark); margin-bottom: 0.5rem; font-size: 1rem; }
+        .article-card p { font-size: 0.8rem; color: #5D6D7E; margin-bottom: 0.5rem; line-height: 1.4; }
+        .article-link { font-size: 0.8rem; color: var(--primary); text-decoration: none; font-weight: 500; }
+        .article-link:hover { text-decoration: underline; }
+        /* الشريط الجانبي */
+        .sidebar { background: var(--white); border-radius: 20px; padding: 1.2rem; box-shadow: var(--shadow); }
+        .sidebar h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 0.8rem; border-bottom: 2px solid #FCE4EC; padding-bottom: 0.3rem; }
+        .sidebar ul { list-style: none; margin-bottom: 1.2rem; }
+        .sidebar ul li { margin-bottom: 0.5rem; }
+        .sidebar ul li a { color: var(--text-dark); text-decoration: none; font-size: 0.85rem; display: block; padding: 0.2rem 0; transition: 0.3s; }
+        .sidebar ul li a:hover { color: var(--primary); padding-right: 0.3rem; }
         .sidebar-ad { margin: 1rem 0; text-align: center; }
-        footer { background: #0F1A24; color: #ccc; margin-top: 1.5rem; padding: 0.8rem 0; font-size: 0.7rem; text-align: center; }
-        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.3rem; }
+        .sidebar-note { background: #E8F5E9; padding: 0.8rem; border-radius: 12px; margin-top: 1rem; font-size: 0.75rem; text-align: center; }
+        footer { background: #0F1A24; color: #ccc; margin-top: 2rem; padding: 1.5rem 0 1rem; text-align: center; font-size: 0.7rem; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem; }
         .footer-links a { color: #ccc; text-decoration: none; }
         .footer-links a:hover { color: var(--primary); }
-        .disclaimer { background: #FFF3F0; border-right: 3px solid #FF9800; padding: 0.6rem; border-radius: 12px; margin: 1rem 0; font-size: 0.75rem; text-align: center; }
-        @media (max-width: 600px) { .cards-grid { grid-template-columns: 1fr; } }
+        .disclaimer { background: #FFF3F0; border-right: 3px solid #FF9800; padding: 0.6rem; border-radius: 12px; margin: 1rem 0 0; font-size: 0.75rem; text-align: center; }
+        @media (max-width: 600px) { .cards-grid, .articles-list { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <header><div class="container"><div class="logo">🌸 صحة المرأة</div><div class="tagline">أدوات حاسبة دقيقة</div></div></header>
+    <header><div class="container"><div class="logo">🌸 صحة المرأة</div><div class="tagline">أدوات حاسبة ومقالات توعوية</div></div></header>
     <nav><div class="container"><ul class="nav-links">
         <li><a href="/">الرئيسية</a></li>
         <li><a href="/pregnancy/">الحمل</a></li>
-        <li><a href="/period/">الدورة</a></li>
+        <li><a href="/period/">الدورة والتبويض</a></li>
         <li><a href="/health/">الصحة العامة</a></li>
         <li><a href="/blog/">المدونة</a></li>
         <li><a href="/pages/about.html">من نحن</a></li>
     </ul></div></nav>
 
     <div class="container">
-        <!-- ✅ إعلان مربع في أعلى الصفحة (تحت شريط التنقل مباشرة) -->
-        <div class="top-ad">
-            <script>
-                atOptions = {
-                    'key' : '9249bc7082ec8de07f68c70c571d2018',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
-        </div>
-
         <div class="main-grid">
+            <!-- العمود الرئيسي -->
             <div>
+                <!-- أدوات الحاسبة (البطاقات) -->
                 <div class="cards-grid">
-                    <div class="card"><h3>🤰 حاسبة الحمل</h3><p>موعد الولادة وأسابيع الحمل</p><a href="/pregnancy/" class="btn">ابدأي</a></div>
-                    <div class="card"><h3>🩸 حاسبة الدورة</h3><p>التبويض وأيام الأمان</p><a href="/period/" class="btn">ابدأي</a></div>
-                    <div class="card"><h3>📊 BMI</h3><p>مؤشر كتلة الجسم</p><a href="/health/bmi.html" class="btn">ابدأي</a></div>
-                    <div class="card"><h3>⚖️ وزن الحمل</h3><p>الزيادة الصحية</p><a href="/health/weight-gain.html" class="btn">ابدأي</a></div>
-                    <div class="card"><h3>📈 نمو الجنين</h3><p>مخطط النمو</p><a href="/health/fetal-growth.html" class="btn">ابدأي</a></div>
-                    <div class="card"><h3>🔥 سعرات حرارية</h3><p>احتياجك اليومي</p><a href="/health/calories.html" class="btn">ابدأي</a></div>
+                    <div class="card"><h3>🤰 حاسبة الحمل</h3><p>موعد الولادة وأسابيع الحمل ومراحل نمو الجنين.</p><a href="/pregnancy/" class="btn">ابدأي الآن</a></div>
+                    <div class="card"><h3>🩸 حاسبة الدورة الشهرية</h3><p>تتبعي دورتكِ وأيام التبويض وأيام الأمان.</p><a href="/period/" class="btn">ابدأي الآن</a></div>
+                    <div class="card"><h3>📊 مؤشر كتلة الجسم (BMI)</h3><p>احسبي وزنكِ المثالي ونصائح للحمل الصحي.</p><a href="/health/bmi.html" class="btn">ابدأي الآن</a></div>
+                    <div class="card"><h3>⚖️ زيادة الوزن في الحمل</h3><p>تتبعي زيادة وزنكِ أسبوعيًا حسب توصيات الأطباء.</p><a href="/health/weight-gain.html" class="btn">ابدأي الآن</a></div>
+                    <div class="card"><h3>📈 مخطط نمو الجنين</h3><p>قارني طول ووزن جنينكِ بالمعدلات الطبيعية.</p><a href="/health/fetal-growth.html" class="btn">ابدأي الآن</a></div>
+                    <div class="card"><h3>🔥 حاسبة السعرات الحرارية</h3><p>احتياجكِ اليومي أثناء الحمل أو الرضاعة.</p><a href="/health/calories.html" class="btn">ابدأي الآن</a></div>
+                </div>
+
+                <!-- أحدث المقالات (مع صور) -->
+                <div class="latest-articles">
+                    <h2 class="section-title">📝 أحدث المقالات</h2>
+                    <div class="articles-list">
+                        <!-- مقال 1: الدورة الشهرية الطبيعية -->
+                        <div class="article-card">
+                            <img class="article-img" src="https://i.ibb.co/GQ9sYDn8/adinavoicu-women-1487825-1920.jpg" alt="الدورة الشهرية">
+                            <div class="article-info">
+                                <div class="article-date">1 أبريل 2025</div>
+                                <h4>🩸 الدورة الشهرية الطبيعية: علامات الصحة ومتى تستشيرين الطبيب</h4>
+                                <p>تعرفي على خصائص الدورة الطبيعية والأعراض الطبيعية والعلامات التحذيرية...</p>
+                                <a href="/blog/menstrual-health.html" class="article-link">اقرأ المزيد →</a>
+                            </div>
+                        </div>
+                        <!-- مقال 2: أسباب تأخر الدورة -->
+                        <div class="article-card">
+                            <img class="article-img" src="https://i.ibb.co/bMFkDJrp/cuncon-women-1733991-1920.jpg" alt="تأخر الدورة">
+                            <div class="article-info">
+                                <div class="article-date">8 أبريل 2025</div>
+                                <h4>📋 أسباب تأخر الدورة الشهرية: دليل شامل</h4>
+                                <p>التوتر، تكيس المبايض، الغدة الدرقية، الرضاعة – تعرفي على الأسباب ومتى يجب زيارة الطبيب.</p>
+                                <a href="/blog/delayed-period-reasons.html" class="article-link">اقرأ المزيد →</a>
+                            </div>
+                        </div>
+                        <!-- مقال 3: أسباب تأخر الحمل -->
+                        <div class="article-card">
+                            <img class="article-img" src="https://i.ibb.co/v6bXkB1R/mvorocha-pregnant-1088240-1920.jpg" alt="تأخر الحمل">
+                            <div class="article-info">
+                                <div class="article-date">15 أبريل 2025</div>
+                                <h4>👶 أسباب تأخر الحمل بعد الزواج: متى تبدأين القلق؟</h4>
+                                <p>استعراض العوامل الأنثوية والذكورية، الفحوصات الأساسية، ونصائح لزيادة فرصة الإنجاب.</p>
+                                <a href="/blog/delayed-pregnancy-reasons.html" class="article-link">اقرأ المزيد →</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- الشريط الجانبي -->
             <div class="sidebar">
                 <h3>📌 روابط سريعة</h3>
-                <ul><li><a href="/pregnancy/">حاسبة الحمل</a></li><li><a href="/period/">حاسبة الدورة</a></li><li><a href="/period/ovulation.html">حاسبة التبويض</a></li><li><a href="/health/bmi.html">BMI</a></li></ul>
-                <!-- إعلان مربع في الشريط الجانبي (سطح المكتب فقط) -->
+                <ul>
+                    <li><a href="/pregnancy/">🤰 حاسبة الحمل</a></li>
+                    <li><a href="/period/">🩸 حاسبة الدورة الشهرية</a></li>
+                    <li><a href="/period/ovulation.html">🥚 حاسبة التبويض</a></li>
+                    <li><a href="/health/bmi.html">📊 حاسبة BMI</a></li>
+                    <li><a href="/health/weight-gain.html">⚖️ وزن الحمل المثالي</a></li>
+                    <li><a href="/health/fetal-growth.html">📈 نمو الجنين</a></li>
+                </ul>
+
                 <div class="sidebar-ad">
                     <script>atOptions={'key':'9249bc7082ec8de07f68c70c571d2018','format':'iframe','height':250,'width':300,'params':{}};</script>
                     <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
                 </div>
-                <h3>🌐 مصادر</h3>
-                <ul><li><a href="https://www.who.int" target="_blank">WHO</a></li><li><a href="https://www.acog.org" target="_blank">ACOG</a></li></ul>
+
+                <h3>🆕 أحدث المقالات</h3>
+                <ul>
+                    <li><a href="/blog/menstrual-health.html">🩸 الدورة الشهرية الطبيعية</a></li>
+                    <li><a href="/blog/delayed-period-reasons.html">📋 أسباب تأخر الدورة الشهرية</a></li>
+                    <li><a href="/blog/delayed-pregnancy-reasons.html">👶 أسباب تأخر الحمل بعد الزواج</a></li>
+                </ul>
+
+                <h3>⭐ أدوات الأكثر استخداماً</h3>
+                <ul>
+                    <li><a href="/pregnancy/due-date.html">📅 حاسبة موعد الولادة</a></li>
+                    <li><a href="/period/ovulation.html">🥚 حاسبة التبويض</a></li>
+                    <li><a href="/health/bmi.html">📏 مؤشر كتلة الجسم</a></li>
+                </ul>
+
+                <h3>🌐 مصادر موثوقة</h3>
+                <ul>
+                    <li><a href="https://www.who.int" target="_blank" rel="noopener noreferrer">منظمة الصحة العالمية (WHO)</a></li>
+                    <li><a href="https://www.acog.org" target="_blank" rel="noopener noreferrer">الكلية الأمريكية لأطباء التوليد (ACOG)</a></li>
+                    <li><a href="https://www.cdc.gov" target="_blank" rel="noopener noreferrer">مراكز السيطرة على الأمراض (CDC)</a></li>
+                </ul>
+
+                <div class="sidebar-note">
+                    💡 تذكير: جميع أدواتنا ومقالاتنا لأغراض توعوية. استشيري طبيبكِ لتقييم حالتك الخاصة.
+                </div>
             </div>
         </div>
-        <div class="disclaimer"><strong>⚠️ تنبيه طبي:</strong> أدوات توعوية - استشيري طبيبكِ.</div>
+
+        <div class="disclaimer">
+            <strong>⚠️ تنبيه طبي مهم:</strong> جميع الأدوات والنتائج والمقالات هي لأغراض توعوية وتعليمية فقط، ولا تغني عن استشارة الطبيب المختص. يرجى مراجعة مقدم الرعاية الصحية قبل اتخاذ أي قرار.
+        </div>
     </div>
 
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="/">الرئيسية</a> | <a href="/pregnancy/">الحمل</a> | <a href="/period/">الدورة</a> | <a href="/health/">الصحة</a> | <a href="/blog/">المدونة</a> | <a href="/pages/about.html">من نحن</a> | <a href="/pages/privacy.html">الخصوصية</a>
+                <a href="/">الرئيسية</a> | <a href="/pregnancy/">الحمل</a> | <a href="/period/">الدورة</a> | <a href="/health/">الصحة العامة</a> | <a href="/blog/">المدونة</a> | <a href="/pages/about.html">من نحن</a> | <a href="/pages/privacy.html">سياسة الخصوصية</a> | <a href="/pages/contact.html">اتصل بنا</a>
             </div>
             <div>© 2025 صحة المرأة - جميع الحقوق محفوظة</div>
+            <div class="disclaimer-footer" style="font-size:0.7rem; margin-top:0.3rem;">⚠️ للأغراض التوعوية فقط - لا يغني عن استشارة الطبيب.</div>
         </div>
     </footer>
 
-    <!-- إعلان سوشيال بار -->
+    <!-- سوشيال بار -->
     <script src="https://pl29111033.profitablecpmratenetwork.com/b0/76/52/b07652c8af166665f15defd7d6b8a7ca.js"></script>
 </body>
 </html>
