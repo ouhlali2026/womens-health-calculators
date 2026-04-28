@@ -1,8 +1,3 @@
-✅ حاسبة موعد الولادة (مصححة)
-
-الرابط: /pregnancy/due-date.html
-
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -43,6 +38,7 @@
         button { background: var(--primary); color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 30px; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; width: 100%; }
         button:hover { background: var(--primary-dark); }
         .result { background: #FFF3F0; padding: 1rem; border-radius: 16px; margin-top: 1rem; font-weight: bold; line-height: 1.8; text-align: center; }
+        .inline-ad { margin: 1rem 0; text-align: center; }
         .sidebar { background: var(--white); border-radius: 20px; padding: 1rem; box-shadow: var(--shadow); }
         .sidebar h3 { color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid #FCE4EC; }
         .sidebar ul { list-style: none; margin-bottom: 1rem; }
@@ -84,7 +80,22 @@
                     <input type="number" id="cycleLength" value="28" min="21" max="35" step="1">
                 </div>
                 <button onclick="calculateDueDate()">احسبي موعد الولادة</button>
-                <div class="result" id="result"></div>
+
+                <!-- إعلان مربع أسفل الحاسبة (داخل المحتوى الرئيسي) -->
+                <div class="inline-ad">
+                    <script>
+                        atOptions = {
+                            'key' : '9249bc7082ec8de07f68c70c571d2018',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
+                </div>
+
+                <div class="result" id="result">📌 سيظهر موعد ولادتك هنا بعد الضغط على زر الحساب.</div>
             </div>
 
             <div class="sidebar">
@@ -97,7 +108,7 @@
                     <li><a href="/pregnancy/advanced.html">⚙️ حمل متقدم</a></li>
                 </ul>
 
-                <!-- إعلان Adstera مربع 300x250 -->
+                <!-- إعلان مربع في الشريط الجانبي -->
                 <div class="sidebar-ad">
                     <script>
                         atOptions = {
@@ -138,9 +149,11 @@
 
     <script>
         function calculateDueDate() {
+            // جلب القيم من المدخلات
             let lmp = document.getElementById('lmpDate').value;
             let cycle = parseInt(document.getElementById('cycleLength').value);
             
+            // التحقق من صحة الإدخال
             if (!lmp) {
                 document.getElementById('result').innerHTML = '⚠️ الرجاء إدخال تاريخ أول يوم لآخر دورة شهرية.';
                 return;
@@ -152,15 +165,18 @@
                 return;
             }
             
-            // حساب موعد الولادة: تاريخ آخر دورة + 280 يوم + (طول الدورة - 28)
+            // حساب موعد الولادة:
+            // الحمل الطبيعي يستمر 280 يوم (40 أسبوع) من أول يوم لآخر دورة
+            // لكن طول الدورة يؤثر: إذا كانت الدورة أطول من 28 يوم، يضاف الفرق
             let cycleDiff = cycle - 28;
             let dueDate = new Date(lmpDate);
             dueDate.setDate(lmpDate.getDate() + 280 + cycleDiff);
             
+            // تنسيق التاريخ
             let options = { year: 'numeric', month: 'long', day: 'numeric' };
             let dueFormatted = dueDate.toLocaleDateString('ar-EG', options);
             
-            // حساب الأسبوع الحالي التقريبي
+            // حساب الأسبوع الحالي التقريبي (إذا كان الحمل قائماً)
             let today = new Date();
             let diffDays = Math.floor((today - lmpDate) / (1000 * 60 * 60 * 24));
             let currentWeek = Math.floor(diffDays / 7);
@@ -174,6 +190,7 @@
                 weekText = `<br>⚠️ تجاوزتِ 40 أسبوعًا. يُفضل استشارة طبيبكِ فورًا.`;
             }
             
+            // عرض النتيجة
             document.getElementById('result').innerHTML = `📌 موعد الولادة المتوقع: <strong>${dueFormatted}</strong>${weekText}<br>📍 ملاحظة: 5% فقط من النساء يلدن في التاريخ المحسوب بدقة.`;
         }
     </script>
