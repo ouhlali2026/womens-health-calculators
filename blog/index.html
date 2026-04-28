@@ -16,7 +16,7 @@
             --shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Tajawal', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.5; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
         header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 1rem 0; text-align: center; }
         .logo { font-size: 1.6rem; font-weight: 700; }
@@ -27,16 +27,19 @@
         .nav-links a:hover { color: var(--primary); }
         .breadcrumb { font-size: 0.75rem; margin: 0.5rem 0; color: #888; }
         .breadcrumb a { color: var(--primary); text-decoration: none; }
-        .top-ad { margin: 0.5rem 0 1rem 0; text-align: center; }
+        .top-ad { margin: 0.2rem 0 0.5rem 0; text-align: center; }
         .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.5rem; margin: 1rem 0; }
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
-        .blog-card { background: var(--white); border-radius: 20px; padding: 1.2rem; box-shadow: var(--shadow); transition: transform 0.3s; }
-        .blog-card:hover { transform: translateY(-3px); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+        .blog-card { background: var(--white); border-radius: 20px; box-shadow: var(--shadow); transition: transform 0.3s; overflow: hidden; }
+        .blog-card:hover { transform: translateY(-5px); }
+        .card-img { width: 100%; height: 180px; object-fit: cover; }
+        .card-content { padding: 1rem; }
         .blog-card .date { font-size: 0.7rem; color: #888; margin-bottom: 0.5rem; }
         .blog-card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.2rem; }
-        .blog-card p { color: #5D6D7E; font-size: 0.85rem; margin-bottom: 0.8rem; line-height: 1.5; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.3rem 0.8rem; border-radius: 30px; text-decoration: none; font-size: 0.8rem; }
+        .blog-card p { color: #5D6D7E; font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.3rem 0.8rem; border-radius: 30px; text-decoration: none; font-size: 0.8rem; transition: background 0.3s; }
+        .btn:hover { background: var(--primary-dark); }
         .sidebar { background: var(--white); border-radius: 20px; padding: 1rem; box-shadow: var(--shadow); }
         .sidebar h3 { color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid #FCE4EC; }
         .sidebar ul { list-style: none; margin-bottom: 1rem; }
@@ -64,7 +67,7 @@
     <div class="container">
         <div class="breadcrumb"><a href="/">الرئيسية</a> / <span>المدونة</span></div>
 
-        <!-- إعلان مربع أعلى الصفحة -->
+        <!-- إعلان علوي مربع -->
         <div class="top-ad">
             <script>
                 atOptions = {
@@ -81,28 +84,37 @@
         <div class="main-grid">
             <div>
                 <div class="cards-grid">
-                    <!-- المقالة الأولى (القديمة) -->
+                    <!-- المقالة الأولى: الدورة الشهرية الطبيعية - 1 أبريل -->
                     <div class="blog-card">
-                        <div class="date">📅 أبريل 2025</div>
-                        <h3>🩸 الدورة الشهرية الطبيعية: علامات الصحة ومتى تستشيرين الطبيب</h3>
-                        <p>تعرفي على خصائص الدورة الطبيعية، الأعراض التي لا تدعو للقلق، والعلامات التي تستدعي استشارة طبية. دليل وقائي لصحتكِ.</p>
-                        <a href="/blog/menstrual-health.html" class="btn">اقرأ المقال</a>
+                        <img class="card-img" src="https://i.ibb.co/GQ9sYDn8/adinavoicu-women-1487825-1920.jpg" alt="امرأة تعاني من آلام الدورة">
+                        <div class="card-content">
+                            <div class="date">📅 1 أبريل 2025</div>
+                            <h3>🩸 الدورة الشهرية الطبيعية: علامات الصحة ومتى تستشيرين الطبيب</h3>
+                            <p>تعرفي على خصائص الدورة الطبيعية، الأعراض التي لا تدعو للقلق، والعلامات التي تستدعي استشارة طبية. دليل وقائي لصحتكِ.</p>
+                            <a href="/blog/menstrual-health.html" class="btn">اقرأ المقال</a>
+                        </div>
                     </div>
 
-                    <!-- المقالة الثانية (جديدة) -->
+                    <!-- المقالة الثانية: أسباب تأخر الدورة الشهرية - 8 أبريل -->
                     <div class="blog-card">
-                        <div class="date">📅 أبريل 2025</div>
-                        <h3>📋 أسباب تأخر الدورة الشهرية: دليل شامل للأسباب الطبيعية والمرضية</h3>
-                        <p>تعرّفي على أهم أسباب تأخر الدورة: التوتر، تكيّس المبايض، الغدة الدرقية، الرضاعة، ومتى يجب استشارة الطبيب.</p>
-                        <a href="/blog/delayed-period-reasons.html" class="btn">اقرأ المقال</a>
+                        <img class="card-img" src="https://i.ibb.co/bMFkDJrp/cuncon-women-1733991-1920.jpg" alt="امرأة تتأمل وتسترخي">
+                        <div class="card-content">
+                            <div class="date">📅 8 أبريل 2025</div>
+                            <h3>📋 أسباب تأخر الدورة الشهرية: دليل شامل للأسباب الطبيعية والمرضية</h3>
+                            <p>تعرّفي على أهم أسباب تأخر الدورة: التوتر، تكيّس المبايض، الغدة الدرقية، الرضاعة، ومتى يجب استشارة الطبيب.</p>
+                            <a href="/blog/delayed-period-reasons.html" class="btn">اقرأ المقال</a>
+                        </div>
                     </div>
 
-                    <!-- المقالة الثالثة (جديدة) -->
+                    <!-- المقالة الثالثة: أسباب تأخر الحمل بعد الزواج - 15 أبريل -->
                     <div class="blog-card">
-                        <div class="date">📅 أبريل 2025</div>
-                        <h3>👶 أسباب تأخر الحمل بعد الزواج: متى تبدأين القلق؟</h3>
-                        <p>تعرفي على أسباب تأخر الحمل من الجانب الأنثوي والذكوري، الفحوصات الأساسية، ونصائح لزيادة فرصة الإنجاب.</p>
-                        <a href="/blog/delayed-pregnancy-reasons.html" class="btn">اقرأ المقال</a>
+                        <img class="card-img" src="https://i.ibb.co/v6bXkB1R/mvorocha-pregnant-1088240-1920.jpg" alt="زوجان سعيدان">
+                        <div class="card-content">
+                            <div class="date">📅 15 أبريل 2025</div>
+                            <h3>👶 أسباب تأخر الحمل بعد الزواج: متى تبدأين القلق؟</h3>
+                            <p>تعرفي على أسباب تأخر الحمل من الجانب الأنثوي والذكوري، الفحوصات الأساسية، ونصائح لزيادة فرصة الإنجاب.</p>
+                            <a href="/blog/delayed-pregnancy-reasons.html" class="btn">اقرأ المقال</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -119,15 +131,11 @@
                     <script>atOptions={'key':'9249bc7082ec8de07f68c70c571d2018','format':'iframe','height':250,'width':300,'params':{}};</script>
                     <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
                 </div>
-                <h3>🌐 مصادر موثوقة</h3>
-                <ul>
-                    <li><a href="https://www.who.int" target="_blank">WHO</a></li>
-                    <li><a href="https://www.acog.org" target="_blank">ACOG</a></li>
-                    <li><a href="https://www.cdc.gov" target="_blank">CDC</a></li>
-                </ul>
+                <h3>🌐 مصادر</h3>
+                <ul><li><a href="https://www.who.int" target="_blank">WHO</a></li><li><a href="https://www.acog.org" target="_blank">ACOG</a></li></ul>
             </div>
         </div>
-        <div class="disclaimer"><strong>⚠️ تنبيه طبي:</strong> المقالات للأغراض التوعوية والوقائية فقط - استشيري طبيبكِ.</div>
+        <div class="disclaimer"><strong>⚠️ تنبيه طبي:</strong> المقالات للأغراض التوعوية - استشيري طبيبكِ.</div>
     </div>
 
     <footer>
