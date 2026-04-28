@@ -1,22 +1,21 @@
-# إرشادات الزحف لموقع صحة المرأة
-# تاريخ الإنشاء: أبريل 2025
+# إرشادات الزحف لموقع صحة المرأة (مستضاف على Cloudflare Workers)
+# آخر تحديث: 28 أبريل 2025
 
-# السماح لجميع محركات البحث بالزحف إلى جميع الصفحات
 User-agent: *
 Allow: /
 
-# منع الزحف إلى المجلدات التي لا تحتوي على محتوى مهم
+# منع الزحف إلى مجلد الأصول (غير ضروري للفهرسة)
 Disallow: /assets/
 
-# تحديد خريطة الموقع (Sitemap)
-Sitemap: https://womens-health-calculators.vercel.app/sitemap.xml
+# خريطة الموقع (باستخدام نطاق workers.dev)
+Sitemap: https://womens-health-calculators.for-us.workers.dev/sitemap.xml
 
-# إرشادات إضافية لـ Googlebot
+# إرشادات إضافية لجوجل
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 5
 
-# إرشادات لـ Bing
+# إرشادات لبينج
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 5
