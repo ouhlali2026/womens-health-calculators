@@ -1,164 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
-    <!-- ========== الصفحة الرئيسية ========== -->
+    <!-- الصفحة الرئيسية -->
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/</loc>
+        <lastmod>2025-05-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     
-    <!-- ========== مجلد الحمل (pregnancy) ========== -->
+    <!-- ==================== مجلد الحمل (pregnancy) ==================== -->
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pregnancy/</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pregnancy/</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pregnancy/due-date.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pregnancy/due-date.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pregnancy/weeks-months.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pregnancy/weeks-months.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pregnancy/ivf.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pregnancy/ivf.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pregnancy/gender.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pregnancy/gender.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pregnancy/advanced.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pregnancy/advanced.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
-    <!-- ========== مجلد الدورة الشهرية (period) ========== -->
+    <!-- ==================== مجلد الدورة الشهرية (period) ==================== -->
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/period/</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/period/</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/period/ovulation.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/period/ovulation.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/period/safe-days.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/period/safe-days.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/period/fertility.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/period/fertility.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
-    <!-- ========== مجلد الصحة العامة (health) ========== -->
+    <!-- ==================== مجلد الصحة العامة (health) ==================== -->
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/health/</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/health/</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/health/bmi.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/health/bmi.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/health/calories.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/health/calories.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/health/weight-gain.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/health/weight-gain.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/health/fetal-growth.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/health/fetal-growth.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
-    <!-- ========== المدونة (blog) ========== -->
+    <!-- ==================== مجلد المدونة (blog) - تم تحديثه ==================== -->
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/blog/</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/blog/</loc>
+        <lastmod>2025-05-01</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/blog/menstrual-health.html</loc>
+        <loc>https://womens-health-calculators.vercel.app/blog/menstrual-health.html</loc>
         <lastmod>2025-04-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/blog/delayed-period-reasons.html</loc>
+        <loc>https://womens-health-calculators.vercel.app/blog/delayed-period-reasons.html</loc>
         <lastmod>2025-04-08</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/blog/delayed-pregnancy-reasons.html</loc>
+        <loc>https://womens-health-calculators.vercel.app/blog/delayed-pregnancy-reasons.html</loc>
         <lastmod>2025-04-15</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/blog/menstrual-symptoms-guide.html</loc>
+        <lastmod>2025-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://womens-health-calculators.vercel.app/blog/poor-circulation-symptoms.html</loc>
+        <lastmod>2025-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     
-    <!-- ========== الصفحات الثابتة (pages) ========== -->
+    <!-- ==================== مجلد الصفحات الثابتة (pages) ==================== -->
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pages/about.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pages/about.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pages/contact.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pages/contact.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pages/privacy.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pages/privacy.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pages/terms.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pages/terms.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
-        <loc>https://womens-health-calculators.for-us.workers.dev/pages/disclaimer.html</loc>
-        <lastmod>2025-04-28</lastmod>
+        <loc>https://womens-health-calculators.vercel.app/pages/disclaimer.html</loc>
+        <lastmod>2025-04-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
     </url>
