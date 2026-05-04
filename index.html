@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-
-
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#D81B60">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="صحة المرأة">
-<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
-
-
-
-<meta name="google-site-verification" content="zE4HwRkxp94QT3obnmgnlPgTJEmW-dIJW937M2J9dKA" />
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="أدوات صحة المرأة التفاعلية: حاسبة الحمل، الدورة الشهرية، التبويض، BMI، وزن الحمل، ونمو الجنين. أحدث المقالات التوعوية.">
     <title>صحة المرأة | أدوات حاسبة ومقالات توعوية</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#D81B60">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="صحة المرأة">
+    <link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
     <style>
         :root {
             --primary: #D81B60;
@@ -40,7 +33,6 @@
         .nav-links a:hover { color: var(--primary); }
         .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 2rem; margin: 2rem 0; }
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { margin-top: 1rem; } }
-        /* البطاقات الرئيسية */
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
         .card { background: var(--white); border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); transition: transform 0.3s; text-align: center; }
         .card:hover { transform: translateY(-5px); }
@@ -48,7 +40,6 @@
         .card p { color: #5D6D7E; margin-bottom: 1.2rem; font-size: 0.9rem; }
         .btn { display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1.2rem; border-radius: 30px; text-decoration: none; font-size: 0.85rem; transition: 0.3s; }
         .btn:hover { background: var(--primary-dark); }
-        /* قسم المقالات الحديثة */
         .latest-articles { margin-bottom: 2rem; }
         .section-title { font-size: 1.4rem; color: var(--primary); margin-bottom: 1rem; border-right: 4px solid var(--primary); padding-right: 0.7rem; }
         .articles-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
@@ -61,7 +52,6 @@
         .article-card p { font-size: 0.8rem; color: #5D6D7E; margin-bottom: 0.5rem; line-height: 1.4; }
         .article-link { font-size: 0.8rem; color: var(--primary); text-decoration: none; font-weight: 500; }
         .article-link:hover { text-decoration: underline; }
-        /* الشريط الجانبي */
         .sidebar { background: var(--white); border-radius: 20px; padding: 1.2rem; box-shadow: var(--shadow); }
         .sidebar h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 0.8rem; border-bottom: 2px solid #FCE4EC; padding-bottom: 0.3rem; }
         .sidebar ul { list-style: none; margin-bottom: 1.2rem; }
@@ -70,6 +60,9 @@
         .sidebar ul li a:hover { color: var(--primary); padding-right: 0.3rem; }
         .sidebar-ad { margin: 1rem 0; text-align: center; }
         .sidebar-note { background: #E8F5E9; padding: 0.8rem; border-radius: 12px; margin-top: 1rem; font-size: 0.75rem; text-align: center; }
+        #installAppContainer { margin-top: 1rem; }
+        #installAppBtn { background-color: var(--primary); color: white; border: none; padding: 0.6rem 1rem; border-radius: 50px; font-size: 0.9rem; cursor: pointer; width: 100%; transition: 0.3s; }
+        #installAppBtn:hover { background-color: var(--primary-dark); }
         footer { background: #0F1A24; color: #ccc; margin-top: 2rem; padding: 1.5rem 0 1rem; text-align: center; font-size: 0.7rem; }
         .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem; }
         .footer-links a { color: #ccc; text-decoration: none; }
@@ -93,7 +86,6 @@
         <div class="main-grid">
             <!-- العمود الرئيسي -->
             <div>
-                <!-- أدوات الحاسبة (البطاقات) -->
                 <div class="cards-grid">
                     <div class="card"><h3>🤰 حاسبة الحمل</h3><p>موعد الولادة وأسابيع الحمل ومراحل نمو الجنين.</p><a href="/pregnancy/" class="btn">ابدأي الآن</a></div>
                     <div class="card"><h3>🩸 حاسبة الدورة الشهرية</h3><p>تتبعي دورتكِ وأيام التبويض وأيام الأمان.</p><a href="/period/" class="btn">ابدأي الآن</a></div>
@@ -103,7 +95,6 @@
                     <div class="card"><h3>🔥 حاسبة السعرات الحرارية</h3><p>احتياجكِ اليومي أثناء الحمل أو الرضاعة.</p><a href="/health/calories.html" class="btn">ابدأي الآن</a></div>
                 </div>
 
-                <!-- أحدث المقالات (مع صور) -->
                 <div class="latest-articles">
                     <h2 class="section-title">📝 أحدث المقالات</h2>
                     <div class="articles-list">
@@ -137,6 +128,24 @@
                                 <a href="/blog/delayed-pregnancy-reasons.html" class="article-link">اقرأ المزيد →</a>
                             </div>
                         </div>
+                        <div class="article-card">
+                            <img class="article-img" src="https://i.ibb.co/DHdGCTpq/20260501-014837-0000.jpg" alt="أعراض الدورة الشهرية">
+                            <div class="article-info">
+                                <div class="article-date">28 أبريل 2025</div>
+                                <h4>🩸 أعراض الدورة الشهرية الطبيعية والمرضية</h4>
+                                <p>تعرّفي على أعراض الدورة قبل نزولها بأسبوع، الفرق بين الأعراض الطبيعية والمرضية..</p>
+                                <a href="/blog/menstrual-symptoms-guide.html" class="article-link">اقرأ المزيد →</a>
+                            </div>
+                        </div>
+                        <div class="article-card">
+                            <img class="article-img" src="https://i.ibb.co/Xrhq7sxV/20260501-023422-0000.jpg" alt="ضعف الدورة الدموية">
+                            <div class="article-info">
+                                <div class="article-date">1 مايو 2025</div>
+                                <h4>❤️ ضعف الدورة الدموية: الأعراض والأسباب والعلاج</h4>
+                                <p>تعرّفي على أعراض ضعف الدورة الدموية في الساقين والرأس، وهل هذه الحالة خطيرة؟</p>
+                                <a href="/blog/poor-circulation-symptoms.html" class="article-link">اقرأ المزيد →</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,6 +162,12 @@
                     <li><a href="/health/fetal-growth.html">📈 نمو الجنين</a></li>
                 </ul>
 
+                <!-- ✅ زر تثبيت التطبيق -->
+                <div id="installAppContainer" style="display: none;">
+                    <button id="installAppBtn">📲 حمّل التطبيق</button>
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.3rem;">أضف التطبيق إلى شاشة هاتفك واستخدمه بسهولة</p>
+                </div>
+
                 <div class="sidebar-ad">
                     <script>atOptions={'key':'9249bc7082ec8de07f68c70c571d2018','format':'iframe','height':250,'width':300,'params':{}};</script>
                     <script src="https://www.highperformanceformat.com/9249bc7082ec8de07f68c70c571d2018/invoke.js"></script>
@@ -163,6 +178,8 @@
                     <li><a href="/blog/menstrual-health.html">🩸 الدورة الشهرية الطبيعية</a></li>
                     <li><a href="/blog/delayed-period-reasons.html">📋 أسباب تأخر الدورة الشهرية</a></li>
                     <li><a href="/blog/delayed-pregnancy-reasons.html">👶 أسباب تأخر الحمل بعد الزواج</a></li>
+                    <li><a href="/blog/menstrual-symptoms-guide.html">🩸 أعراض الدورة الشهرية</a></li>
+                    <li><a href="/blog/poor-circulation-symptoms.html">❤️ ضعف الدورة الدموية</a></li>
                 </ul>
 
                 <h3>⭐ أدوات الأكثر استخداماً</h3>
@@ -200,7 +217,39 @@
         </div>
     </footer>
 
-    <!-- سوشيال بار -->
     <script src="https://pl29111033.profitablecpmratenetwork.com/b0/76/52/b07652c8af166665f15defd7d6b8a7ca.js"></script>
+
+    <script>
+        // PWA Installation – زر التثبيت
+        let deferredPrompt;
+        const installContainer = document.getElementById('installAppContainer');
+        const installBtn = document.getElementById('installAppBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            if (installContainer) installContainer.style.display = 'block';
+        });
+
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    console.log(`نتيجة اختيار المستخدم: ${outcome}`);
+                    deferredPrompt = null;
+                    if (installContainer) installContainer.style.display = 'none';
+                } else {
+                    alert('يمكنك تثبيت التطبيق عبر قائمة المتصفح → إضافة إلى الشاشة الرئيسية');
+                }
+            });
+        }
+
+        window.addEventListener('appinstalled', () => {
+            if (installContainer) installContainer.style.display = 'none';
+            deferredPrompt = null;
+            console.log('تم تثبيت التطبيق بنجاح');
+        });
+    </script>
 </body>
 </html>
