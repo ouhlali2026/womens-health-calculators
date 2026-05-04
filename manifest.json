@@ -1,0 +1,23 @@
+{
+  "name": "صحة المرأة",
+  "short_name": "صحة المرأة",
+  "description": "أدوات حاسبة ومقالات توعوية لصحة المرأة",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#D81B60",
+  "background_color": "#FDF8F9",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
