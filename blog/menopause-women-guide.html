@@ -112,13 +112,20 @@
         .article-box li {
             margin-bottom: 0.5rem;
         }
-        /* الصور متجاوبة بالكامل */
+        /* الصورة: حجم مناسب على الهواتف */
         .article-img {
             width: 100%;
             height: auto;
+            max-height: 280px;
+            object-fit: cover;
             border-radius: 20px;
             margin: 1rem 0;
             display: block;
+        }
+        @media (max-width: 600px) {
+            .article-img {
+                max-height: 180px;
+            }
         }
         .img-caption {
             font-size: 0.7rem;
@@ -140,7 +147,7 @@
             background: #FFF3F0;
             border-right: 4px solid #FF9800;
         }
-        /* جداول متجاوبة */
+        /* جداول قابلة للتمرير */
         .table-wrapper {
             overflow-x: auto;
             margin: 1.5rem 0;
@@ -263,7 +270,7 @@
 
         <div class="main-grid">
             <div class="article-box">
-                <!-- الصورة الرئيسية (تظهر كاملة) -->
+                <!-- الصورة الرئيسية -->
                 <img class="article-img" src="https://i.ibb.co/Mx4YgQm5/file-000000002540720aa3f732bb10305d6f.png" alt="سن اليأس للمرأة">
                 <div class="img-caption">📷 صورة توضيحية | دليل سن اليأس</div>
 
@@ -329,21 +336,9 @@
                             <tr><th>المرحلة</th><th>العمر التقريبي</th><th>الدورة الشهرية</th><th>الأعراض</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>ما قبل انقطاع الطمث (Perimenopause)</strong></td>
-                            <td>35-45 سنة (يختلف اختلافاً كبيراً)</td>
-                            <td>تغيرات في الانتظام: أطول، أقصر، غزارة، خفة – تصبح غير منتظمة</td>
-                            <td>لاحظتِ أعراض مثل: الهبات الساخنة، اضطرابات النوم، تقلبات المزاج، جفاف المهبل</td>
-                            </tr>
-                            <tr><td><strong>سن اليأس (Menopause)</strong></td>
-                            <td>حوالي 51 سنة (متوسط 51 عاماً – بين 45 و55 عاماً)</td>
-                            <td>تتوقف الدورة الشهرية تماماً (انقطاع لمدة 12 شهراً متتالياً)</td>
-                            <td>الأعراض قد تصل إلى ذروتها، خاصة الهبات الساخنة، والتعب.</td>
-                            </tr>
-                            <tr><td><strong>ما بعد انقطاع الطمث (Postmenopause)</strong></td>
-                            <td>51 فما فوق</td>
-                            <td>لا توجد دورة</td>
-                            <td>تتحسن الأعراض تدريجياً، لكن تزداد المخاطر الصحية طويلة المدى</td>
-                            </tr>
+                            <tr><td><strong>ما قبل انقطاع الطمث (Perimenopause)</strong></td><td>35-45 سنة (يختلف اختلافاً كبيراً)</td><td>تغيرات في الانتظام: أطول، أقصر، غزارة، خفة – تصبح غير منتظمة</td><td>لاحظتِ أعراض مثل: الهبات الساخنة، اضطرابات النوم، تقلبات المزاج، جفاف المهبل</td></tr>
+                            <tr><td><strong>سن اليأس (Menopause)</strong></td><td>حوالي 51 سنة (متوسط 51 عاماً – بين 45 و55 عاماً)</td><td>تتوقف الدورة الشهرية تماماً (انقطاع لمدة 12 شهراً متتالياً)</td><td>الأعراض قد تصل إلى ذروتها، خاصة الهبات الساخنة، والتعب.</td></tr>
+                            <tr><td><strong>ما بعد انقطاع الطمث (Postmenopause)</strong></td><td>51 فما فوق</td><td>لا توجد دورة</td><td>تتحسن الأعراض تدريجياً، لكن تزداد المخاطر الصحية طويلة المدى</td></tr>
                         </tbody>
                     </table>
                 </div>
