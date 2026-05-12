@@ -1,24 +1,31 @@
-# robots.txt لموقع وظائف على مستوى العالم
-# تاريخ التحديث: 28 أبريل 2026
+ # إرشادات الزحف لموقع "صحة المرأة"
+# صالح لجميع محركات البحث: Google, Bing, Yandex, Yahoo, DuckDuckGo وغيرها
+# تاريخ الإنشاء: 13 مايو 2025
 
-# السماح لجميع محركات البحث بفهرسة الموقع
+# السماح لجميع محركات البحث بالزحف إلى جميع الصفحات
 User-agent: *
 Allow: /
 
-# إرشادات خاصة بجوجل
+# منع الزحف إلى مجلدات غير مهمة (لا تحتوي على محتوى للفهرسة)
+Disallow: /assets/
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /assets/images/
+
+# إرشادات لزاحف Google (تسريع الفهرسة مع مراعاة الحمل)
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 10
+Crawl-delay: 2
 
-# إرشادات خاصة بينج
+# إرشادات لزاحف Bing (Microsoft)
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 10
+Crawl-delay: 2
 
-# خريطة الموقع (تأكد من صحة المسار)
-Sitemap: https://womens-health-calculators.for-us.workers.dev/sitemap.xml
+# إرشادات لزاحف Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
 
-# منع فهرسة ملفات ومجلدات معينة (حماية)
-Disallow: /cgi-bin/
-Disallow: /private/
-Disallow: /backup/
+# تحديد خريطة الموقع (ضرورية للفهرسة السريعة)
+Sitemap: https://womens-health-calculators.vercel.app/sitemap.xml
