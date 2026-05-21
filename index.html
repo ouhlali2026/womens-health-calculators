@@ -59,8 +59,6 @@
         .footer-links a { color: #ccc; text-decoration: none; }
         .footer-links a:hover { color: var(--primary); }
         .disclaimer { background: #FFF3F0; border-right: 3px solid #FF9800; padding: 0.6rem; border-radius: 12px; margin: 1rem 0 0; font-size: 0.75rem; text-align: center; }
-        @media (max-width: 600px) { .cards-grid, .articles-list { grid-template-columns: 1fr; } }
-        /* تنسيق h1 الجديد */
         .page-main-title {
             font-size: 1.8rem;
             color: #D81B60;
@@ -68,11 +66,7 @@
             text-align: center;
             line-height: 1.4;
         }
-        @media (max-width: 600px) {
-            .page-main-title {
-                font-size: 1.5rem;
-            }
-        }
+        @media (max-width: 600px) { .cards-grid, .articles-list { grid-template-columns: 1fr; } .page-main-title { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
@@ -87,11 +81,9 @@
     </ul></div></nav>
 
     <div class="container">
-        <!-- ✅ إضافة h1 الرئيسي للصفحة (تم حل مشكلة Bing) -->
         <h1 class="page-main-title">🌸 صحة المرأة: أدوات حاسبة ومقالات توعوية</h1>
 
         <div class="main-grid">
-            <!-- العمود الرئيسي (البطاقات + المقالات) -->
             <div>
                 <div class="cards-grid">
                     <div class="card"><h3>🤰 حاسبة الحمل</h3><p>موعد الولادة وأسابيع الحمل ومراحل نمو الجنين.</p><a href="/pregnancy/" class="btn">ابدأي الآن</a></div>
@@ -105,6 +97,27 @@
                 <div class="latest-articles">
                     <h2 class="section-title">📝 أحدث المقالات</h2>
                     <div class="articles-list">
+                        <!-- المقال الجديد 1: الدورة مرتين في الشهر - 21 مايو -->
+                        <div class="article-card">
+                            <img class="article-img" src="https://i.ibb.co/JRtmxt5V/file-0000000026b071f4936928c89c09e9fc.png" alt="الدورة الشهرية مرتين في الشهر">
+                            <div class="article-info">
+                                <div class="article-date">21 مايو 2025</div>
+                                <h4>🩸 الدورة الشهرية مرتين في الشهر: الأسباب ومتى تستشيرين الطبيب؟</h4>
+                                <p>تعرّفي على أسباب نزول الدورة مرتين في الشهر، الأسباب الطبيعية والمرضية، ومتى يجب استشارة الطبيب.</p>
+                                <a href="/blog/period-twice-a-month.html" class="article-link">اقرأ المزيد →</a>
+                            </div>
+                        </div>
+                        <!-- المقال الجديد 2: الدورة بعد الولادة والرضاعة - 21 مايو -->
+                        <div class="article-card">
+                            <img class="article-img" src="https://i.ibb.co/r2f0TH2X/1779336043443.png" alt="الدورة الشهرية بعد الولادة والرضاعة">
+                            <div class="article-info">
+                                <div class="article-date">21 مايو 2025</div>
+                                <h4>🤱 الدورة الشهرية بعد الولادة والرضاعة: دليل الأم الجديدة</h4>
+                                <p>متى تعود الدورة بعد الولادة؟ كيف تؤثر الرضاعة الطبيعية على انتظامها؟ إجابات لكل أم جديدة.</p>
+                                <a href="/blog/postpartum-period-breastfeeding.html" class="article-link">اقرأ المزيد →</a>
+                            </div>
+                        </div>
+                        <!-- المقال السابق 1: نظام غذائي صحي - 13 مايو -->
                         <div class="article-card">
                             <img class="article-img" src="https://i.ibb.co/x8mZV83K/file-00000000e104720a8c2f443652418e54.png" alt="نظام غذائي صحي أثناء الحمل">
                             <div class="article-info">
@@ -114,6 +127,7 @@
                                 <a href="/blog/healthy-pregnancy-diet.html" class="article-link">اقرأ المزيد →</a>
                             </div>
                         </div>
+                        <!-- المقال السابق 2: سن اليأس - 12 مايو -->
                         <div class="article-card">
                             <img class="article-img" src="https://i.ibb.co/Mx4YgQm5/file-000000002540720aa3f732bb10305d6f.png" alt="سن اليأس للمرأة">
                             <div class="article-info">
@@ -123,6 +137,7 @@
                                 <a href="/blog/menopause-women-guide.html" class="article-link">اقرأ المزيد →</a>
                             </div>
                         </div>
+                        <!-- المقال السابق 3: علامات الحمل المبكرة - 12 مايو -->
                         <div class="article-card">
                             <img class="article-img" src="https://i.ibb.co/cKt11vcv/file-0000000002bc720aa485a21eb9892b1c.png" alt="علامات الحمل المبكرة">
                             <div class="article-info">
@@ -136,7 +151,6 @@
                 </div>
             </div>
 
-            <!-- الشريط الجانبي -->
             <div class="sidebar">
                 <h3>📌 روابط سريعة</h3>
                 <ul>
@@ -155,6 +169,8 @@
 
                 <h3>🆕 أحدث المقالات (نصياً)</h3>
                 <ul>
+                    <li><a href="/blog/period-twice-a-month.html">🩸 الدورة مرتين في الشهر</a></li>
+                    <li><a href="/blog/postpartum-period-breastfeeding.html">🤱 الدورة بعد الولادة والرضاعة</a></li>
                     <li><a href="/blog/healthy-pregnancy-diet.html">🥗 نظام غذائي صحي أثناء الحمل</a></li>
                     <li><a href="/blog/menopause-women-guide.html">🌸 سن اليأس للمرأة</a></li>
                     <li><a href="/blog/early-pregnancy-signs.html">🤰 علامات الحمل المبكرة</a></li>
