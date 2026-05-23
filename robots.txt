@@ -1,6 +1,6 @@
- # إرشادات الزحف لموقع "صحة المرأة"
+# إرشادات الزحف لموقع "صحة المرأة"
 # صالح لجميع محركات البحث: Google, Bing, Yandex, Yahoo, DuckDuckGo وغيرها
-# تاريخ الإنشاء: 13 مايو 2025
+# تاريخ الإنشاء: 23 مايو 2025
 
 # السماح لجميع محركات البحث بالزحف إلى جميع الصفحات
 User-agent: *
@@ -28,4 +28,4 @@ Allow: /
 Crawl-delay: 2
 
 # تحديد خريطة الموقع (ضرورية للفهرسة السريعة)
-Sitemap: https://womens-health-calculators.vercel.app/sitemap.xml
+Sitemap: https://womens-health-calculators.for-us.workers.dev/sitemap.xml
