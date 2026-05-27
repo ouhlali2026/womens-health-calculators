@@ -6,56 +6,247 @@
     <meta name="description" content="تعرّفي على أسباب نزول الدورة الشهرية مرتين في الشهر، الأسباب الطبيعية والمرضية، ومتى يجب استشارة الطبيب. دليل توعوي شامل.">
     <meta name="keywords" content="الدورة الشهرية مرتين في الشهر, أسباب نزول الدورة مرتين, دورتين في شهر, اضطرابات الدورة الشهرية">
     <meta name="author" content="صحة المرأة">
-    <title>الدورة الشهرية مرتين في الشهر: الأسباب ومتى تستشيرين الطبيب؟ | صحة المرأة</title>
+    <title>الدورة مرتين في الشهر: الأسباب ومتى تستشيرين الطبيب | صحة المرأة</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Tajawal', sans-serif; background: #FDF8F9; color: #2C3E50; line-height: 1.7; word-break: break-word; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { background: linear-gradient(135deg, #D81B60, #AD1457); color: white; padding: 1rem 0; text-align: center; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #FDF8F9;
+            color: #2C3E50;
+            line-height: 1.7;
+            word-break: break-word;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #D81B60, #AD1457);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
         .logo { font-size: 1.6rem; font-weight: 700; }
         .tagline { font-size: 0.8rem; opacity: 0.9; margin-top: 0.3rem; }
-        nav { background: white; box-shadow: 0 1px 5px rgba(0,0,0,0.05); position: sticky; top: 0; padding: 0.5rem 0; z-index: 100; }
-        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: #2C3E50; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        nav {
+            background: white;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            padding: 0.5rem 0;
+            z-index: 100;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2C3E50;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
         .nav-links a:hover { color: #D81B60; }
-        .breadcrumb { font-size: 0.75rem; margin: 1rem 0; color: #888; }
+        .breadcrumb {
+            font-size: 0.75rem;
+            margin: 1rem 0;
+            color: #888;
+        }
         .breadcrumb a { color: #D81B60; text-decoration: none; }
-        .top-ad { margin: 0.5rem 0 1rem; text-align: center; }
-        .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 2rem; margin: 2rem 0; }
-        @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
-        .article-box { background: white; border-radius: 24px; padding: 2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.05); overflow: hidden; }
-        @media (max-width: 600px) { .article-box { padding: 1.2rem; } }
-        .article-box h1 { color: #D81B60; font-size: 1.8rem; margin-bottom: 0.5rem; line-height: 1.4; }
-        @media (max-width: 600px) { .article-box h1 { font-size: 1.5rem; } }
-        .article-box h2 { color: #AD1457; font-size: 1.4rem; margin: 1.5rem 0 0.8rem; border-right: 4px solid #D81B60; padding-right: 0.7rem; }
-        @media (max-width: 600px) { .article-box h2 { font-size: 1.2rem; } }
-        .article-box p { margin-bottom: 1rem; color: #5D6D7E; }
-        .article-box ul, .article-box ol { margin: 0.5rem 0 1rem 1.5rem; }
-        .article-box li { margin-bottom: 0.5rem; }
-        .article-img { width: 100%; height: auto; max-width: 100%; border-radius: 20px; margin: 1rem 0; display: block; }
-        .img-caption { font-size: 0.7rem; color: #888; text-align: center; margin-top: -0.5rem; margin-bottom: 1rem; }
-        .info-box, .warning-box { padding: 1rem; border-radius: 16px; margin: 1.5rem 0; overflow-x: auto; }
-        .info-box { background: #E8F5E9; border-right: 4px solid #4CAF50; }
-        .warning-box { background: #FFF3F0; border-right: 4px solid #FF9800; }
-        .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
-        table { width: 100%; border-collapse: collapse; min-width: 500px; }
-        th, td { border: 1px solid #ddd; padding: 0.8rem; text-align: right; vertical-align: top; }
-        th { background: #D81B60; color: white; }
-        .sidebar { background: white; border-radius: 20px; padding: 1.2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .sidebar h3 { color: #D81B60; font-size: 1.1rem; margin-bottom: 0.8rem; border-bottom: 2px solid #FCE4EC; padding-bottom: 0.3rem; }
-        .sidebar ul { list-style: none; margin-bottom: 1.2rem; }
-        .sidebar ul li a { color: #2C3E50; text-decoration: none; font-size: 0.85rem; display: block; padding: 0.2rem 0; transition: 0.3s; }
-        .sidebar ul li a:hover { color: #D81B60; padding-right: 0.3rem; }
-        .sidebar-ad { text-align: center; margin: 1rem 0; }
-        footer { background: #0F1A24; color: #ccc; margin-top: 2rem; padding: 1.5rem 0 1rem; text-align: center; font-size: 0.7rem; }
-        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem; }
-        .footer-links a { color: #ccc; text-decoration: none; }
+        .top-ad {
+            margin: 0.5rem 0 1rem;
+            text-align: center;
+        }
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+        .article-box {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        @media (max-width: 600px) {
+            .article-box { padding: 1.2rem; }
+        }
+        .article-box h1 {
+            color: #D81B60;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        @media (max-width: 600px) {
+            .article-box h1 { font-size: 1.5rem; }
+        }
+        .article-box h2 {
+            color: #AD1457;
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.8rem;
+            border-right: 4px solid #D81B60;
+            padding-right: 0.7rem;
+        }
+        @media (max-width: 600px) {
+            .article-box h2 { font-size: 1.2rem; }
+        }
+        .article-box p {
+            margin-bottom: 1rem;
+            color: #5D6D7E;
+        }
+        .article-box ul, .article-box ol {
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        .article-box li {
+            margin-bottom: 0.5rem;
+        }
+        .article-img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border-radius: 20px;
+            margin: 1rem 0;
+            display: block;
+        }
+        .img-caption {
+            font-size: 0.7rem;
+            color: #888;
+            text-align: center;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+        .info-box, .warning-box {
+            padding: 1rem;
+            border-radius: 16px;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .info-box {
+            background: #E8F5E9;
+            border-right: 4px solid #4CAF50;
+        }
+        .warning-box {
+            background: #FFF3F0;
+            border-right: 4px solid #FF9800;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: right;
+            vertical-align: top;
+        }
+        th {
+            background: #D81B60;
+            color: white;
+        }
+        .sidebar {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .sidebar h3 {
+            color: #D81B60;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 2px solid #FCE4EC;
+            padding-bottom: 0.3rem;
+        }
+        .sidebar ul {
+            list-style: none;
+            margin-bottom: 1.2rem;
+        }
+        .sidebar ul li a {
+            color: #2C3E50;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: block;
+            padding: 0.2rem 0;
+            transition: 0.3s;
+        }
+        .sidebar ul li a:hover {
+            color: #D81B60;
+            padding-right: 0.3rem;
+        }
+        .sidebar-ad {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        footer {
+            background: #0F1A24;
+            color: #ccc;
+            margin-top: 2rem;
+            padding: 1.5rem 0 1rem;
+            text-align: center;
+            font-size: 0.7rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
         .footer-links a:hover { color: #D81B60; }
-        .disclaimer { background: #FFF3F0; border-right: 3px solid #FF9800; padding: 0.8rem; border-radius: 12px; margin: 1rem 0; font-size: 0.75rem; text-align: center; }
-        .internal-links { margin: 1.5rem 0; text-align: center; }
-        .internal-links a { background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 30px; text-decoration: none; color: #D81B60; margin: 0.2rem; display: inline-block; font-size: 0.8rem; }
-        @media (max-width: 480px) { .internal-links a { display: block; margin: 0.4rem auto; width: fit-content; } }
+        .disclaimer {
+            background: #FFF3F0;
+            border-right: 3px solid #FF9800;
+            padding: 0.8rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+        .internal-links {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .internal-links a {
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #D81B60;
+            margin: 0.2rem;
+            display: inline-block;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 480px) {
+            .internal-links a {
+                display: block;
+                margin: 0.4rem auto;
+                width: fit-content;
+            }
+        }
     </style>
 </head>
 <body>
@@ -124,10 +315,10 @@
                     <table>
                         <thead><tr><th>الحالة</th><th>طبيعي</th><th>يستدعي القلق</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>الانتظام</strong></td><td>تحدث مرة واحدة أو مرتين ثم تعود الدورة للانتظام</td><td>تستمر لعدة أشهر متتالية (3 أشهر فأكثر)</td></tr>
-                            <tr><td><strong>كمية الدم</strong></td><td>خفيفة إلى متوسطة، مشابهة لدورتكِ المعتادة</td><td>غزيرة جداً (تغيير الفوطة كل ساعة أو ساعتين)</td></tr>
-                            <tr><td><strong>الألم</strong></td><td>تقلصات خفيفة إلى متوسطة</td><td>ألم شديد جداً لا يستجيب للمسكنات</td></tr>
-                            <tr><td><strong>الأعراض الأخرى</strong></td><td>لا توجد أعراض غير طبيعية</td><td>حمى، دوخة، إغماء، أو نزيف بين الدورات</td></tr>
+                            <tr><td><strong>الانتظام</strong></td><td>تحدث مرة واحدة أو مرتين ثم تعود الدورة للانتظام</td><td>تستمر لعدة أشهر متتالية (3 أشهر فأكثر)</td> </tr>
+                            <tr> <td><strong>كمية الدم</strong></td> <td>خفيفة إلى متوسطة، مشابهة لدورتكِ المعتادة</td> <td>غزيرة جداً (تغيير الفوطة كل ساعة أو ساعتين)</td> </tr>
+                            <tr> <td><strong>الألم</strong></td> <td>تقلصات خفيفة إلى متوسطة</td> <td>ألم شديد جداً لا يستجيب للمسكنات</td> </tr>
+                            <tr> <td><strong>الأعراض الأخرى</strong></td> <td>لا توجد أعراض غير طبيعية</td> <td>حمى، دوخة، إغماء، أو نزيف بين الدورات</td> </tr>
                         </tbody>
                     </table>
                 </div>
