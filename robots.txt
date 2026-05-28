@@ -1,14 +1,24 @@
-User-agent: bingbot
+# robots.txt for womens-health-calculators site
+# Last updated: 2026-05-28
+
+User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: /private/
+Disallow: /temp/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
 
 User-agent: BingPreview
 Allow: /
 
 User-agent: Yandex
 Allow: /
-
-User-agent: *
-Allow: /
-Disallow: /assets/
+Crawl-delay: 5
 
 Sitemap: https://womens-health-calculators.for-us.workers.dev/sitemap.xml
