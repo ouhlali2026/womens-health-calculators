@@ -1,31 +1,14 @@
-# إرشادات الزحف لموقع "صحة المرأة"
-# صالح لجميع محركات البحث: Google, Bing, Yandex, Yahoo, DuckDuckGo وغيرها
-# تاريخ الإنشاء: 23 مايو 2025
-
-# السماح لجميع محركات البحث بالزحف إلى جميع الصفحات
-User-agent: *
+User-agent: bingbot
 Allow: /
 
-# منع الزحف إلى مجلدات غير مهمة (لا تحتوي على محتوى للفهرسة)
-Disallow: /assets/
-Disallow: /assets/css/
-Disallow: /assets/js/
-Disallow: /assets/images/
-
-# إرشادات لزاحف Google (تسريع الفهرسة مع مراعاة الحمل)
-User-agent: Googlebot
+User-agent: BingPreview
 Allow: /
-Crawl-delay: 2
 
-# إرشادات لزاحف Bing (Microsoft)
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 2
-
-# إرشادات لزاحف Yandex
 User-agent: Yandex
 Allow: /
-Crawl-delay: 2
 
-# تحديد خريطة الموقع (ضرورية للفهرسة السريعة)
+User-agent: *
+Allow: /
+Disallow: /assets/
+
 Sitemap: https://womens-health-calculators.for-us.workers.dev/sitemap.xml
